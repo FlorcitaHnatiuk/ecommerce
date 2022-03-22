@@ -53,7 +53,6 @@ export const Menu = styled.ul `
         flex-direction: column;
         align-items: left;
         transition: 0.5s all ease;
-
     }
 `;
 
@@ -159,7 +158,7 @@ export const MobileIcon = styled.div `
 
         svg {
             fill: #0A043C;
-            margin-right: 0.5rem;
+            margin: 1rem;
         }
     }
 `;
