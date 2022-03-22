@@ -1,12 +1,13 @@
 import React, { useState } from 'react';
-import { Container, LogoContainer, Wrapper, Menu, MenuItem, MenuItemLink, MobileIcon } from './Navbar.elements'
-import { FaMeetup, FaBars, FaShoppingCart, FaHome, FaSistrix } from "react-icons/fa";
-import { IconContext } from 'react-icons'
+import { Container, Wrapper, LogoContainer, MobileIcon, Menu, MenuItem, MenuItemLink } from './Navbar.elements';
+import { FaMeetup, FaBars, FaHome, FaSistrix, FaShoppingCart, } from "react-icons/fa";
+import { IconContext } from 'react-icons';
 
 
 export const Navbar = () => {
 
     const [showMobileMenu, setShowMobileMenu] = useState(false);
+
     return (
         <Container>
             <Wrapper>
@@ -19,6 +20,7 @@ export const Navbar = () => {
                     <MobileIcon onClick={() => setShowMobileMenu(!showMobileMenu)}>
                         {showMobileMenu ? <FaBars /> : <FaBars />}
                     </MobileIcon>
+
                     <Menu open={showMobileMenu}>
                         <MenuItem>
                             <MenuItemLink onClick={() => setShowMobileMenu(!showMobileMenu)}>

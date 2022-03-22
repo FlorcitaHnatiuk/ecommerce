@@ -49,9 +49,9 @@ export const Menu = styled.ul `
         left: ${({ open }) => (open ? "0" : "-100%")}; //Import
         width: 100%;
         height: 90vh;
-        justify-content: center;
+        justify-content: left;
         flex-direction: column;
-        align-items: center;
+        align-items: left;
         transition: 0.5s all ease;
 
     }
@@ -100,7 +100,7 @@ export const MenuItemLink = styled.a `
         svg {
             display:none;
             fill:#0A043C;
-            margin-right: 0.5rem;
+            margin-right: 0.8rem;
         }
     }
 
