@@ -9,7 +9,7 @@ export const Container = styled.div `
 export const Wrapper = styled.div `
     width: 100%;
     max-width: 1300px; 
-    heigth: 100%;
+    height: 100%;
     display: flex;
     flex-wrap: wrap;
     justify-content: space-between;
@@ -75,7 +75,6 @@ export const MenuItemLink = styled.a `
     height: 100%;
     padding: 0.5rem 2.5rem;
     color: #333333;
-    opacity: 60%;
     font-family: sans-serif;
     font-size:14px;
     font-weight: 100;
@@ -84,9 +83,16 @@ export const MenuItemLink = styled.a `
     line-height: 22px;
 
     &:hover {
-        color: black;
         background-color: #fff159;
+        color:#0A043C; 
         transition: 0.5s all ease;
+
+        div {
+            svg {
+                fill: #0A043C;
+                opacity: 80%;
+            }
+        }
     }
 
     div {

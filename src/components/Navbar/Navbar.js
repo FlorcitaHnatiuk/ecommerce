@@ -1,12 +1,13 @@
 import React, { useState } from 'react';
+import CartWidget from '../CartWidget/CartWidget';
 import { Container, Wrapper, LogoContainer, MobileIcon, Menu, MenuItem, MenuItemLink } from './Navbar.elements';
-import { FaMeetup, FaBars, FaHome, FaSistrix, FaShoppingCart, FaTimes} from "react-icons/fa";
+import { FaMeetup, FaBars, FaHome, FaSistrix, FaTimes } from "react-icons/fa";
 import { IconContext } from 'react-icons';
 
 
 export const Navbar = () => {
 
-    const [showMobileMenu, setShowMobileMenu] = useState(false);
+    const [showMobileMenu, setShowMobileMenu] = useState(true);
 
     return (
         <Container>
@@ -40,10 +41,7 @@ export const Navbar = () => {
                         </MenuItem>
                         <MenuItem>
                             <MenuItemLink onClick={() => setShowMobileMenu(!showMobileMenu)}>
-                                <div>
-                                    <FaShoppingCart />
-                                    Carrito
-                                </div>
+                                <CartWidget />
                             </MenuItemLink>
                         </MenuItem>
                     </Menu>
