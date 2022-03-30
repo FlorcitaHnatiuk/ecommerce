@@ -49,9 +49,9 @@ export const Menu = styled.ul `
         left: ${({ open }) => (open ? "0" : "-100%")}; //Import
         width: 100%;
         height: 90vh;
-        justify-content: left;
+        justify-content: center;
         flex-direction: column;
-        align-items: left;
+        align-items: center;
         transition: 0.5s all ease;
     }
 `;
@@ -114,7 +114,7 @@ export const MenuItemLink = styled.a `
 
         div {
             width: 100%;
-            justify-content: left;
+            justify-content: center;
 
             svg {
                 display:flex;
@@ -125,7 +125,7 @@ export const MenuItemLink = styled.a `
     @media screen and (max-width: 880px) {
         div {
             width: 40%;
-            justify-content: left;
+            justify-content: center;
 
             svg {
                 display: flex;
@@ -136,7 +136,7 @@ export const MenuItemLink = styled.a `
     @media screen and (max-width: 500px) {
         div {
             width: 60%;
-            justify-content: left;
+            justify-content: center;
 
             svg {
                 display: flex;
@@ -146,7 +146,7 @@ export const MenuItemLink = styled.a `
 
     @media screen and (max-width: 260px) {
         width: 100%;
-        justify-content: left;
+        justify-content: center;
 
         svg {
             display: flex;
