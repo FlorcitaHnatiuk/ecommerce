@@ -7,7 +7,7 @@ import { IconContext } from 'react-icons';
 
 export const Navbar = () => {
 
-    const [showMobileMenu, setShowMobileMenu] = useState(true);
+    const [showMobileMenu, setShowMobileMenu] = useState(false);
 
     return (
         <Container>

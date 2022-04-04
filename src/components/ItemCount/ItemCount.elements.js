@@ -33,6 +33,7 @@ export const AddToCart = styled.button `
     border: none;
     border-radius: 6px;
     box-shadow: rgb(255, 255, 255) 0px 0px 0px 0px;
+    cursor: pointer;
 
     &:hover{
         background-color: #2968c8;

@@ -45,10 +45,10 @@ export const Menu = styled.ul `
 
     @media screen and (max-width: 968px) {
         position: absolute;
-        top: 70px;
+        /* top: 70px; */
         left: ${({ open }) => (open ? "0" : "-100%")}; //Import
         width: 100%;
-        height: 90vh;
+        height: 60vh;
         justify-content: center;
         flex-direction: column;
         align-items: center;

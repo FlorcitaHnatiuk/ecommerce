@@ -1,8 +1,21 @@
 
 import { Title } from './ItemListContainer.elements';
-import SetQuantity from '../ItemCount/ItemCount'
+import { getProducts } from '../../asyncmock'
+import { useState, useEffect } from 'react';
+import ItemCount from '../ItemCount/ItemCount'
+import ItemList from '../ItemList/ItemList'
+
 
 const ItemListContainer = (props) => {
+    const [products, setProducts] = useState([])
+
+    useEffect(() => {
+        getProducts().then(prods => {
+            setProducts(prods)
+        }).catch(error => {
+            console.log(error)
+        })
+    }, [])
 
     const handleOnAdd = (quantity, onAdd) => {
         if (quantity === 0){
@@ -15,7 +28,8 @@ const ItemListContainer = (props) => {
     return (
         <>
             <Title>{props.greeting}</Title>
-            <SetQuantity initial={1} stock={5} onAdd={handleOnAdd}/>
+            <ItemList products={products}/>
+            <ItemCount initial={1} stock={5} onAdd={handleOnAdd}/>
         </>
         
     )

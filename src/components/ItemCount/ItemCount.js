@@ -1,12 +1,12 @@
 import { useState } from 'react'
 import { Button, Quantity, Counter, AddToCart } from './ItemCount.elements';
 
-const SetQuantity = ({initial, stock, onAdd}) => {
-    const [count, setCount] = useState(0)
+const ItemCount = ({initial, stock, onAdd}) => {
+    const [count, setCount] = useState(initial)
 
     const decrement = () => {
-        if(count > 0) {
-            setCount(count - 1) 
+        if ((count > initial)){
+            setCount(count-1)
         }
     }
 
@@ -28,4 +28,4 @@ const SetQuantity = ({initial, stock, onAdd}) => {
     )
 }
 
-export default SetQuantity
+export default ItemCount
