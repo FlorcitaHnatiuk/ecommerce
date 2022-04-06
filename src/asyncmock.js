@@ -20,6 +20,13 @@ const products = [
         category: 'notebook',
         img: 'https://http2.mlstatic.com/D_NQ_NP_889449-MLA47446389763_092021-O.webp'
     },
+    { 
+        id: 4, 
+        name: 'iphone 13 pro max',
+        price: 475297,
+        category: 'celular',
+        img: 'https://http2.mlstatic.com/D_NQ_NP_803693-MLA47776072534_102021-V.webp'
+    },
 ]
 
 export const getProducts = () => {
@@ -33,7 +40,7 @@ export const getProducts = () => {
 export const getProductsbyId = (id) => {
     return new Promise (resolve => {
         setTimeout(() => {
-            resolve(products.find(prod => prod.id === 1))
+            resolve(products.find(prod => prod.id === 4))
         }, 2000)
     })
 }
