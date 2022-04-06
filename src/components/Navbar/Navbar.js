@@ -15,7 +15,7 @@ export const Navbar = () => {
                 <IconContext.Provider value={{ style: { fontSize: "2em" } }}>
                     <LogoContainer>
                         <FaMeetup />
-                        <p>mercado libre</p>
+                        <p>Hola!</p>
                     </LogoContainer>
 
                     <MobileIcon onClick={() => setShowMobileMenu(!showMobileMenu)}>

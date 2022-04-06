@@ -1,8 +1,6 @@
-
 import { Title } from './ItemListContainer.elements';
 import { getProducts } from '../../asyncmock'
 import { useState, useEffect } from 'react';
-import ItemCount from '../ItemCount/ItemCount'
 import ItemList from '../ItemList/ItemList'
 
 
@@ -17,19 +15,10 @@ const ItemListContainer = (props) => {
         })
     }, [])
 
-    const handleOnAdd = (quantity, onAdd) => {
-        if (quantity === 0){
-            console.log(`Carrito vacío`)
-        } else {
-            console.log(`Tenés ${quantity} productos en tu carrito`)
-        }
-    }
-
     return (
         <>
             <Title>{props.greeting}</Title>
             <ItemList products={products}/>
-            <ItemCount initial={1} stock={5} onAdd={handleOnAdd}/>
         </>
         
     )

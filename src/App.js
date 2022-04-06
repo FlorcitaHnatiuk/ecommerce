@@ -1,13 +1,15 @@
 import React from 'react';
 import { Navbar } from "./components/Navbar/Navbar";
 import ItemListContainer from "./components/ItemListContainer/ItemListContainer";
+import ItemDetailContainer from './components/ItemDetailContainer/ItemDetailContainer';
 
 function App() {
 
   return (
     <>
       <Navbar/>
-      <ItemListContainer greeting={"La tiendita MeLi"}/>
+      <ItemListContainer greeting={"Productos"}/>
+      <ItemDetailContainer/>
     </>
   );
 }
