@@ -2,11 +2,12 @@ import styled from 'styled-components';
 
 export const Counter = styled.div `
     text-align: center;
+    display: flex;
 `;
 
 export const Button = styled.button `
     text-align: center;
-    background-color: #3483fa;
+    background-color: #540E33;
     color: #fff;
     padding: 0.5rem;
     width: 40px;
@@ -18,6 +19,8 @@ export const Button = styled.button `
 
 export const Quantity = styled.p `
     text-align: center;
+    align-items: center;
+    align-self: center;
 `;
 
 export const AddToCart = styled.button `
@@ -29,13 +32,9 @@ export const AddToCart = styled.button `
     width: 280px;
     height: 48px;
     padding: 0 24px;
-    background-color: #4189e6;
+    background-color: #540E33;
     border: none;
     border-radius: 6px;
     box-shadow: rgb(255, 255, 255) 0px 0px 0px 0px;
     cursor: pointer;
-
-    &:hover{
-        background-color: #2968c8;
-    }
 `;

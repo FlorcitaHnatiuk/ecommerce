@@ -10,15 +10,11 @@ export const DetailBtn = styled.button `
     height: 48px;
     padding: 0 24px;
     margin-top: 0.8rem;
-    background-color: #4189e6;
+    background-color: #CCAFAF;
     border: none;
     border-radius: 6px;
     box-shadow: rgb(255, 255, 255) 0px 0px 0px 0px;
     cursor: pointer;
-
-    &:hover{
-        background-color: #2968c8;
-    }
 `;
 
 export const ItemContainer = styled.div `
@@ -38,7 +34,7 @@ export const Card = styled.div `
     background-color:white;
     border-radius: 6px;
     box-shadow: 0 1px 1px 0 rgb(0 0 0 / 10%), 0 -1px 2px 0 rgb(0 0 0 / 10%);
-    margin: 0 0.8rem 0 0.8rem;
+    margin: 0 0.8rem 1.6rem 0.8rem;
     flex-grow: 1;
     min-height: 100%;
     position: relative;

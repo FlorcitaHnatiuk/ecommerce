@@ -1,7 +1,7 @@
 import React, { useState } from 'react';
 import CartWidget from '../CartWidget/CartWidget';
 import { Container, Wrapper, LogoContainer, MobileIcon, Menu, MenuItem, MenuItemLink } from './Navbar.elements';
-import { FaMeetup, FaBars, FaHome, FaSistrix, FaTimes } from "react-icons/fa";
+import { FaBars, FaHome, FaSistrix, FaTimes } from "react-icons/fa";
 import { IconContext } from 'react-icons';
 
 
@@ -14,8 +14,7 @@ export const Navbar = () => {
             <Wrapper>
                 <IconContext.Provider value={{ style: { fontSize: "2em" } }}>
                     <LogoContainer>
-                        <FaMeetup />
-                        <p>Hola!</p>
+                        <p>La Vinería</p>
                     </LogoContainer>
 
                     <MobileIcon onClick={() => setShowMobileMenu(!showMobileMenu)}>

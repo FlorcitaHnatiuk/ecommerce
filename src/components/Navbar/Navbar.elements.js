@@ -3,7 +3,7 @@ import styled from 'styled-components';
 export const Container = styled.div `
     width: 100%;
     height: 85px;
-    background-color: #fff159; 
+    background-color: #540E33; 
 `;
 
 export const Wrapper = styled.div `
@@ -27,11 +27,11 @@ export const LogoContainer = styled.div `
 
     p {
         font-weight: bold;
-        color:#0A043C; 
+        color:#FDC8B7; 
     }
 
     svg {
-        fill: #0A043C;
+        fill: #FDC8B7;
         margin-right: 0.5rem;
     }
 `;
@@ -74,7 +74,7 @@ export const MenuItemLink = styled.a `
     align-items: center;
     height: 100%;
     padding: 0.5rem 2.5rem;
-    color: #333333;
+    color: #FDC8B7;
     font-family: sans-serif;
     font-size:14px;
     font-weight: 100;
@@ -83,13 +83,12 @@ export const MenuItemLink = styled.a `
     line-height: 22px;
 
     &:hover {
-        background-color: #fff159;
-        color:#0A043C; 
+        color:#DE356A; 
         transition: 0.5s all ease;
 
         div {
             svg {
-                fill: #0A043C;
+                fill: #DE356A;
                 opacity: 80%;
             }
         }
@@ -104,7 +103,7 @@ export const MenuItemLink = styled.a `
 
         svg {
             display:none;
-            fill:#0A043C;
+            fill: #DE356A;
             margin-right: 0.8rem;
         }
     }
@@ -163,7 +162,7 @@ export const MobileIcon = styled.div `
         cursor: pointer;
 
         svg {
-            fill: #0A043C;
+            fill: #DE356A;
             margin: 1rem;
         }
     }
