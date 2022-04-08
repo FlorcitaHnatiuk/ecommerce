@@ -1,6 +1,7 @@
-import { Title } from './ItemListContainer.elements';
+import { Title } from './ItemListContainer.elements'
 import { getProducts } from '../../asyncmock'
-import { useState, useEffect } from 'react';
+import { useState, useEffect } from 'react'
+import { useParams } from 'react-router-dom'
 import ItemList from '../ItemList/ItemList'
 
 
