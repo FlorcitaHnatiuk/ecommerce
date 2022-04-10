@@ -2,7 +2,7 @@ import ItemCount from "../ItemCount/ItemCount"
 import { getProducts } from '../../asyncmock'
 import { useState, useEffect } from 'react';
 
-const ItemDetail = ({ id, name, price, img, category }) => {
+const ItemDetail = ({ id, name, price, img, category, variety, productor, corte, enologist, place, barricado }) => {
 
     const [products, setProducts] = useState([])
 
@@ -27,11 +27,21 @@ const ItemDetail = ({ id, name, price, img, category }) => {
         <>
             <div>
                 <img src={img} alt={name}/>
+            </div>
+            <div>
                 <h3>{name}</h3>
                 <p>${price}</p>
-                <p>{category}</p>
-                <ItemCount initial={1} stock={5} onAdd={handleOnAdd}/>
-            </div>            
+                <ul>
+                    <li>{category}</li>
+                    <li>{variety}</li>
+                    <li>{productor}</li>
+                    <li>{corte}</li>
+                    <li>{enologist}</li>
+                    <li>{place}</li>
+                    <li>{barricado}</li>
+                </ul>
+            </div>  
+            <ItemCount initial={1} stock={5} onAdd={handleOnAdd}/>
         </>
         )
     }

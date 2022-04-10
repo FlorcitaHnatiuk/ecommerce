@@ -104,13 +104,39 @@ const products = [
         barricado: '22 meses en barricas (70% americanas y 30% francesas) más estiba de 1 año en botella',
         img: 'https://http2.mlstatic.com/D_NQ_NP_878659-MLA47397903796_092021-O.webp'
     },
+    { 
+        id: 9, 
+        name: 'Achaval Ferrer',
+        price: 2300,
+        category: 'Tinto',
+        variety: 'Malbec',
+        productor: 'Achaval Ferrer',
+        corte: '100% Malbec',
+        enologist: 'Gustavo Rearte',
+        place: 'Medrano, Lujan de Cuyo & Tupungato, Mendoza, Argentina',
+        barricado: '9 meses en barricas de roble francés de 2do y 3er uso',
+        img: 'https://http2.mlstatic.com/D_NQ_NP_708139-MLA44600169684_012021-O.webp'
+    },
+    { 
+        id: 10, 
+        name: 'Kung Fu',
+        price: 3400,
+        category: 'Tinto',
+        variety: 'Malbec',
+        productor: 'Riccitelli',
+        corte: '100% Malbec',
+        enologist: 'Matias Riccitelli',
+        place: 'Gualtallary, Mendoza, Argentina',
+        barricado: 'Añejado en huevos de concreto',
+        img: 'https://http2.mlstatic.com/D_NQ_NP_711773-MLA44959921508_022021-V.webp'
+    },
 ]
 
 export const getProducts = () => {
     return new Promise (resolve => {
         setTimeout(() => {
             resolve(products)
-        }, 2000)
+        }, 100)
     })
 }
 
@@ -122,10 +148,10 @@ export const getProductsbyId = (id) => {
     })
 }
 
-export const getProductsbyCat = (category) => {
+/* export const getProductsbyCat = (category) => {
     return new Promise (resolve => {
         setTimeout(() => {
             resolve(products.find(prod => prod.category === Blend))
         }, 2000)
     })
-}
+} */

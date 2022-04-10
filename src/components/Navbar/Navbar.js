@@ -6,6 +6,7 @@ import { FaBars, FaHome, FaSistrix, FaTimes } from "react-icons/fa";
 import { IconContext } from 'react-icons';
 
 
+
 export const Navbar = () => {
 
     const [showMobileMenu, setShowMobileMenu] = useState(false);
@@ -15,7 +16,9 @@ export const Navbar = () => {
             <Wrapper>
                 <IconContext.Provider value={{ style: { fontSize: "2em" } }}>
                     <LogoContainer>
-                        <p>La Vinería</p>
+                        <Link to='/'>
+                            <h3>La Vinería</h3>
+                        </Link>
                     </LogoContainer>
 
                     <MobileIcon onClick={() => setShowMobileMenu(!showMobileMenu)}>
@@ -25,17 +28,19 @@ export const Navbar = () => {
                     <Menu open={showMobileMenu}>
                         <MenuItem>
                             <MenuItemLink onClick={() => setShowMobileMenu(!showMobileMenu)}>
-                                <div>
-                                    <FaHome />
-                                    Home
-                                </div>
+                                <Link to='/list' className="navItem">Vinos</Link>
+                            </MenuItemLink>
+                        </MenuItem>
+                        <MenuItem>
+                            <MenuItemLink onClick={() => setShowMobileMenu(!showMobileMenu)}>
+                            <Link to='/detail' className="navItem">Detalle</Link>
                             </MenuItemLink>
                         </MenuItem>
                         <MenuItem>
                             <MenuItemLink onClick={() => setShowMobileMenu(!showMobileMenu)}>
                                 <div>
                                     <FaSistrix />
-                                    Productos
+                                    Rosados
                                 </div>
                             </MenuItemLink>
                         </MenuItem>
