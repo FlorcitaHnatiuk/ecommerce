@@ -8,13 +8,15 @@ import ItemList from '../ItemList/ItemList'
 const ItemListContainer = (props) => {
     const [products, setProducts] = useState([])
 
+    const { categoryId } = useParams()
+
     useEffect(() => {
-        getProducts().then(prods => {
+        getProducts(categoryId).then(prods => {
             setProducts(prods)
         }).catch(error => {
             console.log(error)
         })
-    }, [])
+    }, [categoryId])
 
     return (
         <>

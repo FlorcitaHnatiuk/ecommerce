@@ -1,22 +1,5 @@
 import styled from 'styled-components';
 
-export const DetailBtn = styled.button `
-    font-size: 16px;
-    font-weight: 600;
-    color: white;
-    text-align: center;
-    line-height: 48px;
-    width: 200px;
-    height: 48px;
-    padding: 0 24px;
-    margin-top: 0.8rem;
-    background-color: #CCAFAF;
-    border: none;
-    border-radius: 6px;
-    box-shadow: rgb(255, 255, 255) 0px 0px 0px 0px;
-    cursor: pointer;
-`;
-
 export const ItemContainer = styled.div `
     display: -webkit-flex;
     display: flex;

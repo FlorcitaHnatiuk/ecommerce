@@ -1,59 +1,32 @@
+
 import React, { useState, useEffect } from 'react';
 import CartWidget from '../CartWidget/CartWidget';
 import { Link, NavLink } from 'react-router-dom'
-import { Container, Wrapper, LogoContainer, MobileIcon, Menu, MenuItem, MenuItemLink } from './Navbar.elements';
-import { FaBars, FaHome, FaSistrix, FaTimes } from "react-icons/fa";
-import { IconContext } from 'react-icons';
-
-
+import { getCategories } from '../../asyncmock';
+import './Navbar.css'
 
 export const Navbar = () => {
 
-    const [showMobileMenu, setShowMobileMenu] = useState(false);
+    const [categories, setCategories] = useState([])
+
+    useEffect (() => {
+        getCategories().then(categories => {
+            setCategories(categories)
+        })
+    }, [])
+
 
     return (
-        <Container>
-            <Wrapper>
-                <IconContext.Provider value={{ style: { fontSize: "2em" } }}>
-                    <LogoContainer>
-                        <Link to='/'>
-                            <h3>La Vinería</h3>
-                        </Link>
-                    </LogoContainer>
-
-                    <MobileIcon onClick={() => setShowMobileMenu(!showMobileMenu)}>
-                        {showMobileMenu ? <FaTimes /> : <FaBars />}
-                    </MobileIcon>
-
-                    <Menu open={showMobileMenu}>
-                        <MenuItem>
-                            <MenuItemLink onClick={() => setShowMobileMenu(!showMobileMenu)}>
-                                <Link to='/list' className="navItem">Vinos</Link>
-                            </MenuItemLink>
-                        </MenuItem>
-                        <MenuItem>
-                            <MenuItemLink onClick={() => setShowMobileMenu(!showMobileMenu)}>
-                            <Link to='/detail' className="navItem">Detalle</Link>
-                            </MenuItemLink>
-                        </MenuItem>
-                        <MenuItem>
-                            <MenuItemLink onClick={() => setShowMobileMenu(!showMobileMenu)}>
-                                <div>
-                                    <FaSistrix />
-                                    Rosados
-                                </div>
-                            </MenuItemLink>
-                        </MenuItem>
-                        <MenuItem>
-                            <MenuItemLink onClick={() => setShowMobileMenu(!showMobileMenu)}>
-                                <CartWidget />
-                            </MenuItemLink>
-                        </MenuItem>
-                    </Menu>
-                </IconContext.Provider>
-            </Wrapper>
-        </Container>
+        <nav className="NavBar" >
+            <Link to='/'>
+                <h3>La Vinería</h3>
+            </Link>
+        <div className="Categories">
+        { categories.map(cat => <NavLink key={cat.id} to={`/category/${cat.id}`}
+            className={({isActive}) => isActive ? 'navItem' : 'navSelectedItem'}
+        >{cat.description}</NavLink>)}
+                    <CartWidget />
+        </div>
+        </nav>
     )
 }
-
-

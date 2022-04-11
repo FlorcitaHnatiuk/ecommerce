@@ -32,7 +32,6 @@ const ItemDetail = ({ id, name, price, img, category, variety, productor, corte,
                 <h3>{name}</h3>
                 <p>${price}</p>
                 <ul>
-                    <li>{category}</li>
                     <li>{variety}</li>
                     <li>{productor}</li>
                     <li>{corte}</li>

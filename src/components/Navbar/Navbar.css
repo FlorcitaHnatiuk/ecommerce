@@ -1,0 +1,33 @@
+.NavBar {
+    width: 100%;
+    background-color: #540E33;
+    padding: 2rem;
+}
+
+.Categories {
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    height: 100%;
+    padding: 0.5rem 2.5rem;
+    color: #FDC8B7;
+    font-family: sans-serif;
+    font-size:14px;
+    font-weight: 100;
+    cursor: pointer;
+    transition: 0.5s all ease;
+    line-height: 22px;
+}
+
+.navItem {
+    color: #CCAFAF;
+}
+
+.navItem:hover {
+    color: #900C3F;
+}
+
+.navSelectedItem {
+    font-weight: bold;
+    color: #DE356A;
+}

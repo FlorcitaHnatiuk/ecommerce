@@ -1,7 +1,7 @@
-import { DetailBtn, ItemContainer, Card } from './Item.elements'
+import { ItemContainer, Card } from './Item.elements'
 import { Link } from 'react-router-dom'
 
-const Item = ({ name, price, img }) => {
+const Item = ({ name, price, img, id }) => {
     return (
         
         <ItemContainer>
@@ -9,7 +9,7 @@ const Item = ({ name, price, img }) => {
                 <img width="150" height="250" src={img} alt={name}/>
                 <h3>{name}</h3>
                 <p>${price}</p>
-                <DetailBtn>Ver detalle</DetailBtn>
+                <Link to={`/detail/${id}`} className="DetailBtn">Ver detalle</Link>
             </Card>            
         </ItemContainer>
         )

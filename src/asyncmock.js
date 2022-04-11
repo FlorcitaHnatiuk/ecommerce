@@ -1,11 +1,11 @@
 
 const products = [
     { 
-        id: 1, 
+        id: '1', 
         name: 'Nicasia Red Blend',
         price: 1700,
-        category: 'Malbec',
-        variety: 'Tinto',
+        category: 'tinto',
+        variety: 'Malbec',
         productor: 'Catena Zapata',
         corte: '90% Malbec | 6% Cabernet Sauvignon | 4% Petit Verdot',
         enologist: 'Alejandro Vigil',
@@ -14,11 +14,11 @@ const products = [
         img: 'https://http2.mlstatic.com/D_NQ_NP_906646-MLA42790464402_072020-O.webp'
     },
     { 
-        id: 2, 
+        id: '2', 
         name: 'La Linterna',
         price: 12499,
-        category: 'Chardonnay',
-        variety: 'Blanco',
+        category: 'blanco',
+        variety: 'Chardonnay',
         productor: 'Bemberg Estate Wines',
         corte: '100% Chardonnay',
         enologist: 'Daniel Pi',
@@ -27,11 +27,11 @@ const products = [
         img: 'https://http2.mlstatic.com/D_NQ_NP_913000-MLA31611719047_072019-V.webp'
     },
     { 
-        id: 3, 
+        id: '3', 
         name: 'Alyda Van Salentein',
         price: 2300,
-        category: 'Espumoso',
-        variety: 'Brut Nature',
+        category: 'brut Nature',
+        variety: 'Espumoso',
         productor: 'Salentein',
         corte: '50% Pinot Noir | 45% Chardonnay | 5% Pinot Meunier',
         enologist: 'José Galante - Gustavo Bauzá',
@@ -40,10 +40,10 @@ const products = [
         img: 'https://www.espaciovino.com.ar/media/default/0001/64/thumb_63123_default_big.jpeg'
     },
     { 
-        id: 4, 
+        id: '4', 
         name: 'Postales Del Fin del Mundo',
         price: 620,
-        category: 'Tinto',
+        category: 'tinto',
         variety: 'Mabel',
         productor: 'Del Fin del Mundo',
         corte: '100% Malbec',
@@ -53,11 +53,11 @@ const products = [
         img: 'https://http2.mlstatic.com/D_NQ_NP_2X_803198-MLA48132282577_112021-F.webp'
     },
     { 
-        id: 5, 
+        id: '5', 
         name: 'Trumpeter',
         price: 1318,
-        category: 'Chardonnay',
-        variety: 'Blanco',
+        category: 'blanco',
+        variety: 'Chardonnay',
         productor: 'Rutini Wines',
         corte: '100% Chardonnay',
         enologist: 'Mariano Di Paola',
@@ -66,10 +66,10 @@ const products = [
         img: 'https://http2.mlstatic.com/D_NQ_NP_705850-MLA31907063954_082019-O.webp'
     },
     { 
-        id: 6, 
+        id: '6', 
         name: 'El Enemigo',
         price: 3205,
-        category: 'Tinto',
+        category: 'tinto',
         variety: 'Mabel',
         productor: 'Aleanna',
         corte: '89% Malbec | 11% Petit Verdot',
@@ -79,10 +79,10 @@ const products = [
         img: 'https://http2.mlstatic.com/D_NQ_NP_608241-MLA43162458201_082020-O.webp'
     },
     { 
-        id: 7, 
+        id: '7', 
         name: 'Cadus',
         price: 3105,
-        category: 'Tinto',
+        category: 'tinto',
         variety: 'Mabel',
         productor: 'Cadus Wines',
         corte: '100% Malbec',
@@ -92,10 +92,10 @@ const products = [
         img: 'https://http2.mlstatic.com/D_NQ_NP_643942-MLA46089723072_052021-V.webp'
     },
     { 
-        id: 8, 
+        id: '8', 
         name: 'Pyros',
         price: 4500,
-        category: 'Tinto',
+        category: 'tinto',
         variety: 'Blend',
         productor: 'Pyros Wines',
         corte: '77% Malbec, 22% Syrah y 8% Cabernet Sauvignon',
@@ -105,10 +105,10 @@ const products = [
         img: 'https://http2.mlstatic.com/D_NQ_NP_878659-MLA47397903796_092021-O.webp'
     },
     { 
-        id: 9, 
+        id: '9', 
         name: 'Achaval Ferrer',
         price: 2300,
-        category: 'Tinto',
+        category: 'tinto',
         variety: 'Malbec',
         productor: 'Achaval Ferrer',
         corte: '100% Malbec',
@@ -118,10 +118,10 @@ const products = [
         img: 'https://http2.mlstatic.com/D_NQ_NP_708139-MLA44600169684_012021-O.webp'
     },
     { 
-        id: 10, 
+        id: '10', 
         name: 'Kung Fu',
         price: 3400,
-        category: 'Tinto',
+        category: 'tinto',
         variety: 'Malbec',
         productor: 'Riccitelli',
         corte: '100% Malbec',
@@ -132,10 +132,25 @@ const products = [
     },
 ]
 
-export const getProducts = () => {
+const categories = [
+    {id: 'tinto', description: 'Tinto'},
+    {id: 'blanco', description: 'Blanco'},
+    {id: 'rosado', description: 'Rosado'}
+]
+
+
+export const getCategories = () => {
     return new Promise (resolve => {
         setTimeout(() => {
-            resolve(products)
+            resolve(categories)
+        }, 100)
+    })
+}
+
+export const getProducts = (categoryId) => {
+    return new Promise (resolve => {
+        setTimeout(() => {
+            resolve(categoryId ? products.filter(prod => prod.category === categoryId) : products)
         }, 100)
     })
 }
@@ -143,15 +158,9 @@ export const getProducts = () => {
 export const getProductsbyId = (id) => {
     return new Promise (resolve => {
         setTimeout(() => {
-            resolve(products.find(prod => prod.id === 4))
-        }, 2000)
+            resolve(products.find(prod => prod.id === id))
+        }, 500)
     })
 }
 
-/* export const getProductsbyCat = (category) => {
-    return new Promise (resolve => {
-        setTimeout(() => {
-            resolve(products.find(prod => prod.category === Blend))
-        }, 2000)
-    })
-} */
+
