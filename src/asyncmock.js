@@ -156,6 +156,19 @@ const products = [
         barricado: 'En tanque de acero inoxidable',
         img: 'https://http2.mlstatic.com/D_NQ_NP_910699-MLA48483482523_122021-O.webp'
     },
+    { 
+        id: '13', 
+        name: 'Encarnación',
+        price: 5200,
+        category: 'espumantes',
+        variety: 'Brut Nature',
+        productor: 'Rosell Boher',
+        corte: '80% Chardonnay y 20% Pinot Noir ',
+        enologist: '',
+        place: 'Valle de Uco, Provincia de Mendoza, Argentina',
+        barricado: 'Tradicional / Champenoise',
+        img: '	https://http2.mlstatic.com/D_NQ_NP_656109-MLA45638435600_042021-V.webp'
+    },
 ]
 
 const categories = [
