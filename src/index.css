@@ -21,7 +21,11 @@ p {
 
 h1, h2, h3, h4, h5, h6 {
   font-family: 'Satisfy', cursive;
-  color: #900C3F;
+  color: #900C3F; 
+}
+
+h1 {
+  font-size: 60px;
 }
 
 li {

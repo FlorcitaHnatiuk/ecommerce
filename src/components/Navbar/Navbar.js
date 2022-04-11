@@ -19,7 +19,7 @@ export const Navbar = () => {
     return (
         <nav className="NavBar" >
             <Link to='/'>
-                <h3>La Vinería</h3>
+                <h1 className="neon">La Vinería</h1>
             </Link>
             <div className="Categories">
                 { categories.map(cat => <NavLink key={cat.id} to={`/category/${cat.id}`}

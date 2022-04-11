@@ -21,13 +21,31 @@
 
 .navItem {
     color: #CCAFAF;
+    font-family: 'BIZ UDPMincho', serif;
+    padding-top: 0.5rem;
 }
 
 .navItem:hover {
     color: #900C3F;
+    font-weight: bold;
 }
 
 .navSelectedItem {
     font-weight: bold;
     color: #DE356A;
+    font-family: 'BIZ UDPMincho', serif;
+    padding-top: 0.5rem;
 }
+
+.neon {
+        text-shadow:
+            0 0 5px rgb(255, 0, 153),
+            0 0 10px rgba(255,0,153),
+            0 0 20px rgba(255,0,153),
+            0 0 40px rgb(127, 50, 90),
+		    0 0 80px rgba(127,50,90),
+		    0 0 90px rgba(127,50,90),
+		    0 0 100px rgba(127,50,90),
+		    0 0 140px rgba(127,50,90),
+		    0 0 180px rgba(127,50,90);   
+    }
