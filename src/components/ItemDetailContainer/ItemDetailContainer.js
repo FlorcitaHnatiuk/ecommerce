@@ -32,7 +32,7 @@ const ItemDetailContainer = () => {
                     <h1>Cargando...</h1> :
                 product ? 
                     <ItemDetail  {...product} /> :
-                    <h1>El producto no existe</h1> 
+                    <h1>No tengo ese vino</h1> 
             }
         </div>
     )    
