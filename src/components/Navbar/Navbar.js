@@ -25,6 +25,7 @@ export const Navbar = () => {
                 { categories.map(cat => <NavLink key={cat.id} to={`/category/${cat.id}`}
                     className={({isActive}) => isActive ? 'navSelectedItem' : 'navItem'}>
                     {cat.description}</NavLink>)}
+                <NavLink to='/form' className={({isActive}) => isActive ? 'navSelectedItem' : 'navItem'}>Contactate</NavLink>    
                 <CartWidget />
             </div>
         </nav>

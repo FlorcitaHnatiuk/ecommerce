@@ -1,18 +1,9 @@
 import ItemCount from "../ItemCount/ItemCount"
-import { getProducts } from '../../asyncmock'
-import { useState, useEffect } from 'react';
+import { useState } from 'react';
 
 const ItemDetail = ({ id, name, price, img, category, variety, productor, corte, enologist, place, barricado }) => {
 
     const [products, setProducts] = useState([])
-
-    useEffect(() => {
-        getProducts().then(prods => {
-            setProducts(prods)
-        }).catch(error => {
-            console.log(error)
-        })
-    }, [])
 
     const handleOnAdd = (quantity) => {
         if (quantity === 0){

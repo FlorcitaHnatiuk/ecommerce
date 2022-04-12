@@ -1,4 +1,4 @@
-import { useState, useEffect } from 'react'
+import { useState } from 'react'
 import { Button, Quantity, Counter, AddToCart } from './ItemCount.elements';
 
 const ItemCount = ({initial, stock, onAdd}) => {
