@@ -1,38 +1,38 @@
-import ItemCount from "../ItemCount/ItemCount"
-import { useState } from 'react';
+import ItemCount from '../ItemCount/ItemCount'
+import { ItemDetailContainer, Detail } from './ItemDetail.elements'
+import { Link } from 'react-router-dom'
+import { useState } from 'react'
 
-const ItemDetail = ({ id, name, price, img, category, variety, productor, corte, enologist, place, barricado }) => {
-
-    const [products, setProducts] = useState([])
-
-    const handleOnAdd = (quantity) => {
-        if (quantity === 0){
-            console.log(`Carrito vacío`)
-        } else {
-            console.log(`Tenés ${quantity} productos en tu carrito`)
-        }
+const ItemDetail = ({ name, price, img, variety, productor, corte, enologist, place, barricado, stock }) => {
+    const [quantity, setQuantity]= useState(0)
+    
+    const handleOnAdd = (count) => {
+        console.log('agregar al carrito')
+        setQuantity(count)
     }
 
     return (
         
-        <>
+        <ItemDetailContainer>
             <div>
                 <img src={img} alt={name}/>
             </div>
             <div>
-                <h3>{name}</h3>
+                <h2>{name}</h2>
                 <p>${price}</p>
-                <ul>
+                <Detail>
                     <li>{variety}</li>
                     <li>{productor}</li>
                     <li>{corte}</li>
                     <li>{enologist}</li>
                     <li>{place}</li>
                     <li>{barricado}</li>
-                </ul>
+                </Detail>
+                <div>
+                    {quantity > 0 ? <Link to='/cart'><span>Agregar al carrito</span></Link> : <ItemCount initial={1} stock={stock} onAdd={handleOnAdd}/>}
+                </div>
             </div>  
-            <ItemCount initial={1} stock={5} onAdd={handleOnAdd}/>
-        </>
+        </ItemDetailContainer>
         )
     }
 

@@ -5,25 +5,26 @@ const ItemCount = ({initial, stock, onAdd}) => {
     const [count, setCount] = useState(initial)
 
     const decrement = () => {
-        if ((count > initial)){
-            setCount(count-1)
+        if (count > initial){
+            setCount(count - 1)
         }
     }
 
     const increment = () => {
-        if (count < stock) {
+        if (count < stock){
             setCount(count + 1)
         }
     }
 
+
     return (
-    <>
+        <>
         <Counter>
             <Button className="btn" onClick={decrement}>-</Button>
             <Quantity>{count}</Quantity>
             <Button className="btn" onClick={increment}>+</Button>
         </Counter>
-        <AddToCart onClick={() => onAdd(count)}>Agregá al carrito</AddToCart>
+        <AddToCart onClick={()=> onAdd(count)}>Agregar al carrito</AddToCart>
     </>
     )
 }
