@@ -255,7 +255,7 @@ const products = [
     },
     { 
         id: '19', 
-        name: 'Riccitelli Old Vines From Patagonia Merlot',
+        name: 'Riccitelli Old Vines',
         price: 6700,
         category: 'tintos',
         variety: 'Merlot',
@@ -269,7 +269,7 @@ const products = [
     },
     { 
         id: '20', 
-        name: 'Riccitelli Old Vines From Patagonia Chenin Blanc',
+        name: 'Riccitelli Old Vines',
         price: 6700,
         category: 'blancos',
         variety: 'Chenin Blanc',
