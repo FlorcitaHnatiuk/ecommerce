@@ -7,7 +7,7 @@ import ItemList from '../ItemList/ItemList'
 
 const ItemListContainer = (props) => {
     const [products, setProducts] = useState([])
-
+    const [title, setTitle] = useState()
     const { categoryId } = useParams()
 
     useEffect(() => {
@@ -18,13 +18,19 @@ const ItemListContainer = (props) => {
         })
     }, [categoryId])
 
+    useEffect(() => {
+        setTimeout(() => {
+            setTitle('cambié!')
+        }, 2000)
+    })
+
     const handleClick = () => {
         console.log('click')
     }
 
     return (
         <div onClick={handleClick}>
-            <Title>{props.greeting}</Title>
+            <Title>{title}</Title>
             <ItemList products={products}/>
         </div>
         

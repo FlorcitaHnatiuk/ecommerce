@@ -4,12 +4,16 @@ import { AddToCart } from '../ItemCount/ItemCount.elements'
 import { Link } from 'react-router-dom'
 import { useState, useContext } from 'react'
 import CartContext from '../../context/CartContext'
+import { useNotification } from '../../notification/Notification'
 
 const ItemDetail = ({ id, name, price, img, variety, productor, corte, enologist, place, barricado, stock }) => {
     
     const [quantity, setQuantity]= useState(0)
 
     const { addItem, isInCart } = useContext(CartContext)
+
+    const { setNotification } = useNotification()
+
 
     const handleOnAdd = (count) => {
         setQuantity(count)
@@ -19,6 +23,7 @@ const ItemDetail = ({ id, name, price, img, variety, productor, corte, enologist
         }
 
         addItem ({...productObj, quantity: count})
+        setNotification('success', `agregaste ${count} ${name}`)
     }
 
     return (

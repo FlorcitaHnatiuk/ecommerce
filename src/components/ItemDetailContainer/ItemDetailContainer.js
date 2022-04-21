@@ -29,7 +29,7 @@ const ItemDetailContainer = ({ setCart, cart }) => {
         <div className="ItemDetailContainer" >
             { 
                 loading ? 
-                    <h1>Cargando...</h1> :
+                    <span className="loader"></span> :
                 product ? 
                     <ItemDetail  {...product}  setCart={setCart} cart={cart}/> :
                     <h1>No tengo ese vino</h1> 
