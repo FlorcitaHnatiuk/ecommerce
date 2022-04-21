@@ -20,7 +20,7 @@ const ItemListContainer = (props) => {
 
     useEffect(() => {
         setTimeout(() => {
-            setTitle('cambié!')
+            setTitle('Nuestros vinos')
         }, 2000)
     })
 

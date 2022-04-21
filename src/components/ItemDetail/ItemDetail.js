@@ -14,8 +14,8 @@ const ItemDetail = ({ id, name, price, img, variety, productor, corte, enologist
 
     const { setNotification } = useNotification()
 
-
     const handleOnAdd = (count) => {
+
         setQuantity(count)
 
         const productObj = {
@@ -23,7 +23,9 @@ const ItemDetail = ({ id, name, price, img, variety, productor, corte, enologist
         }
 
         addItem ({...productObj, quantity: count})
+
         setNotification('success', `agregaste ${count} ${name}`)
+
     }
 
     return (
@@ -44,7 +46,7 @@ const ItemDetail = ({ id, name, price, img, variety, productor, corte, enologist
                     <li>Barricado: {barricado}</li>
                 </Detail>
                 <div>
-                    {isInCart(id) ? <Link to='/cart'><AddToCart>Ir al carrito</AddToCart></Link> : <ItemCount initial={1} stock={stock} onAdd={handleOnAdd}/>}
+                    {<ItemCount initial={1} stock={stock} onAdd={handleOnAdd}/>}
                 </div>
             </div>  
         </ItemDetailContainer>
