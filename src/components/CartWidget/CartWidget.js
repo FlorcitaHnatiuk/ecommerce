@@ -4,6 +4,7 @@ import { useContext } from 'react'
 import { Link } from 'react-router-dom'
 import { CartContainer, CartQuantity } from './CartWidget.elements'
 
+
 const CartWidget = () => {
 
     const { getQuantity } = useContext(CartContext)

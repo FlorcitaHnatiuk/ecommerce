@@ -26,7 +26,7 @@ export const Navbar = () => {
                     className={({isActive}) => isActive ? 'navSelectedItem' : 'navItem'}>
                     {cat.description}</NavLink>)}
                 <NavLink to='/form' className={({isActive}) => isActive ? 'navSelectedItem' : 'navItem'}>Contactate</NavLink>    
-                <CartWidget />
+                <CartWidget/>
             </div>
         </nav>
     )
