@@ -283,36 +283,28 @@ const products = [
     },
 ]
 
-const categories = [
-    {id: 'tintos', description: 'Tintos'},
-    {id: 'blancos', description: 'Blancos'},
-    {id: 'espumantes', description: 'Espumantes'},
-    {id: 'rosados', description: 'Rosados'}
-]
+// export const getCategories = () => {
+//     return new Promise (resolve => {
+//         setTimeout(() => {
+//             resolve(categories)
+//         }, 100)
+//     })
+// }
 
+// export const getProducts = (categoryId) => {
+//     return new Promise (resolve => {
+//         setTimeout(() => {
+//             resolve(categoryId ? products.filter(prod => prod.category === categoryId) : products)
+//         }, 100)
+//     })
+// }
 
-export const getCategories = () => {
-    return new Promise (resolve => {
-        setTimeout(() => {
-            resolve(categories)
-        }, 100)
-    })
-}
-
-export const getProducts = (categoryId) => {
-    return new Promise (resolve => {
-        setTimeout(() => {
-            resolve(categoryId ? products.filter(prod => prod.category === categoryId) : products)
-        }, 100)
-    })
-}
-
-export const getProductsbyId = (id) => {
-    return new Promise (resolve => {
-        setTimeout(() => {
-            resolve(products.find(prod => prod.id === id))
-        }, 100)
-    })
-}
+// export const getProductsbyId = (id) => {
+//     return new Promise (resolve => {
+//         setTimeout(() => {
+//             resolve(products.find(prod => prod.id === id))
+//         }, 100)
+//     })
+// }
 
 
