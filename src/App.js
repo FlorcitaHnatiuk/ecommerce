@@ -3,6 +3,7 @@ import ItemListContainer from "./components/ItemListContainer/ItemListContainer"
 import ItemDetailContainer from './components/ItemDetailContainer/ItemDetailContainer'
 import Form from './components/Form/Form'
 import Cart from './components/Cart/Cart'
+import Footer from './components/Footer/Footer'
 import { BrowserRouter, Routes, Route } from 'react-router-dom'
 import { CartContextProvider } from './context/CartContext'
 import { NotificationProvider } from './notification/Notification'
@@ -24,6 +25,7 @@ function App() {
                 <Route path='/form' element={<Form />}/>
                 <Route path='/cart' element={<Cart />} />
               </Routes>
+              <Footer/>
             </BrowserRouter>
           </CartContextProvider>
         </NotificationProvider>
