@@ -5,7 +5,10 @@ import { firestoreDb } from '../../services/firebase'
 import ItemList from '../ItemList/ItemList'
 
 const ItemListContainer = (props) => {
+
     const [products, setProducts] = useState([])
+    const [show, setShow] = useState(false)
+
     const { categoryId } = useParams()
 
     useEffect(() => {
@@ -20,20 +23,30 @@ const ItemListContainer = (props) => {
                 return { id: doc.id, ...doc.data()}
             })
             setProducts(products)
+            setShow(true)
         })
     }, [categoryId])
-
-    if(products.length === 0) {
-        return <h1>No hay productos de esta categoría</h1>
-    }
 
     const handleClick = () => {
         console.log('click')
     }
 
     return (
+        
         <div onClick={handleClick}>
-            <ItemList products={products}/>
+            {
+            show ?
+                (products.length > 0 ?
+                    <>
+                        <h2 className='greeting'>{props.greeting}</h2>
+                        <ItemList products={products}/>
+                    </>
+                    : 
+                    <h1>No hay productos</h1>
+                ) 
+                :
+                <h3>Cargando...</h3> 
+            }
         </div>
         
     )
