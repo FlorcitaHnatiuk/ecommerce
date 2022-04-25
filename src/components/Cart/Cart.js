@@ -14,7 +14,7 @@ const Cart = () => {
                 <Link to={`/`}>Inicio</Link>
             </>
         )
-    }
+    } 
 
     return (
         <>

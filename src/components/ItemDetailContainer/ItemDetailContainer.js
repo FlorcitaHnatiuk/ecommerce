@@ -17,18 +17,17 @@ const ItemDetailContainer = ({ setCart, cart }) => {
             setProduct(product)
             setLoading(true)
         })
+
+        return (() => {
+            setProduct()
+        })
+
     }, [productId])
 
 
     return (
-        <div className="ItemDetailContainer" >
-            { 
-                loading ? 
-                    <span className="loader"></span> :
-                product ? 
-                    <ItemDetail  {...product}  setCart={setCart} cart={cart}/> :
-                    <h1>No tengo ese vino</h1> 
-            }
+        <div>
+            <ItemDetail {...product} setCart={setCart} cart={cart}/> :
         </div>
     )    
 }
