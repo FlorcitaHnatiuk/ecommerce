@@ -1,11 +1,30 @@
 .icon {
+    fill: none;
+    height: 21px;
+    overflow: visible;
     position: relative;
+    width: 24px;
     float: right;
-    margin: 0.5rem;
-    size: 1rem;
+    margin-right: -3rem;
 }
 
 .wine {
     align-items: center;
     text-align: center;
+}
+
+.card {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.card >* {
+    margin: 2px 0;
+}
+
+.img {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-end;
 }

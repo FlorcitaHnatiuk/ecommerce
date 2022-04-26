@@ -7,7 +7,7 @@ const Cart = () => {
 
     const { cart, totalCost, clearCart, finishBuy } = useContext(CartContext)
 
-    if(cart.lenght === 0) {
+    if(cart.length === 0) {
         return (
             <>
                 <h2>Carrito vacío</h2>

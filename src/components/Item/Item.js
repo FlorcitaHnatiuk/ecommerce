@@ -12,11 +12,12 @@ const Item = ({ name, price, img, id }) => {
         
         <ItemContainer onClick={handleClick}>
             <Card>
-                <div>
-                    <img className="icon" src="../img/grapes.PNG"/>
-                </div>
-                <div>
-                    <img className="wine" width="150" height="250" src={img} alt={name}/>
+
+                <div className="card">
+                    <div className="img">
+                        <img className="icon" src="../img/grapes.PNG"/>      
+                        <img className="wine" width="150" height="250" src={img} alt={name}/>
+                    </div>
                     <h2>{name}</h2>
                     <p>${price}</p>
                     <Link to={`/detail/${id}`} className="DetailBtn">Ver detalle</Link>
