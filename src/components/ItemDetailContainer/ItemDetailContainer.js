@@ -16,6 +16,7 @@ const ItemDetailContainer = ({ setCart, cart }) => {
             const product = { id: response.id, ...response.data()}
             setProduct(product)
             setLoading(true)
+
         })
 
         return (() => {

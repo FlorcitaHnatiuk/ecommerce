@@ -283,6 +283,13 @@ const products = [
     },
 ]
 
+const categories = [
+    {id: 'tintos', description: 'Tintos'},
+    {id: 'blancos', description: 'Blancos'},
+    {id: 'espumantes', description: 'Espumantes'},
+    {id: 'rosados', description: 'Rosados'}
+]
+
 export const getCategories = () => {
     return new Promise (resolve => {
         setTimeout(() => {

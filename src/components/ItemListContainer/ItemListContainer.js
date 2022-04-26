@@ -1,8 +1,9 @@
-import { getDocs, collection, query, where } from 'firebase/firestore'
+import { getDocs, collection, query, where, addDoc } from 'firebase/firestore'
 import { useState, useEffect } from 'react'
 import { useParams } from 'react-router-dom'
 import { firestoreDb } from '../../services/firebase'
 import ItemList from '../ItemList/ItemList'
+import { getProducts } from '../../asyncmock'
 
 const ItemListContainer = (props) => {
 
@@ -10,6 +11,32 @@ const ItemListContainer = (props) => {
     const [show, setShow] = useState(false)
 
     const { categoryId } = useParams()
+
+    
+        const cargarDatos = () => {
+            getProducts().then(prods => {
+                console.log('Volvio');
+                console.log(prods);
+    
+                prods.map(({ name, price, img, category, stock, variety, corte, enologist, place, barricado }) => {
+    
+                    addDoc(collection(firestoreDb, "products"), { name, price, img, category, stock, variety, corte, enologist, place, barricado }).then(prods => {
+                        console.log('Volvio');
+                        console.log(prods);
+                    }).catch(error => {
+                        console.error(error);
+                    }).finally(() => {
+                        console.log('Finalizó la promesa');
+                    });
+                });
+    
+            }).catch(error => {
+                console.error(error);
+            }).finally(() => {
+                console.log('Finalizó la promesa');
+            });
+        };
+
 
     useEffect(() => {
 
@@ -40,9 +67,13 @@ const ItemListContainer = (props) => {
                     <>
                         <h2 className='greeting'>{props.greeting}</h2>
                         <ItemList products={products}/>
+                        
                     </>
-                    : 
-                    <h1>No hay productos</h1>
+                    :
+                    <div>
+                        <h1>No hay productos</h1>
+                    </div>
+
                 ) 
                 :
                 <h3>Cargando...</h3> 

@@ -1,4 +1,5 @@
 import './Footer.css'
+import { FaCcVisa, FaBitcoin, FaDollarSign } from "react-icons/fa";
 
 const Footer = () =>{
 
@@ -10,11 +11,18 @@ const Footer = () =>{
                 </div>
                 <div>
                     <p>Todos los medios de pago</p>
+                    <div>
+                        <ul>
+                            <li><FaCcVisa/></li>
+                            <li><FaBitcoin /></li>
+                            <li><FaDollarSign /></li>
+                        </ul> 
+                    </div>
                 </div>
             </div>
-                <div>
-                    <p>Florcita</p>
-                </div>
+            <div className="container">
+                <p class="copyright">Florcita © 2022</p>
+            </div>
         </footer>
     )
 } 
