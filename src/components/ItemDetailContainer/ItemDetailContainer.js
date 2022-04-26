@@ -13,7 +13,7 @@ const ItemDetailContainer = ({ setCart, cart }) => {
     useEffect(() => {
         getDoc(doc(firestoreDb, 'products', productId)).then(response => {
             console.log(response)
-            const product = { if: response.id, ...response.data()}
+            const product = { id: response.id, ...response.data()}
             setProduct(product)
             setLoading(true)
         })
