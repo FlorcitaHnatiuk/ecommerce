@@ -17,10 +17,11 @@ export const Card = styled.div `
     background-color:white;
     border-radius: 6px;
     box-shadow: 0 1px 1px 0 rgb(0 0 0 / 10%), 0 -1px 2px 0 rgb(0 0 0 / 10%);
-    margin: 0 0.8rem 1.6rem 0.8rem;
+    margin: 1.6rem 0.8rem 1.6rem 0.8rem;
     flex-grow: 1;
     min-height: 100%;
     position: relative;
+    padding: 1.2rem 0.5rem 0.5rem;
 
     &:hover{
         -webkit-box-shadow: 5px 13px 31px 3px rgba(0,0,0,0.32); 

@@ -1,0 +1,11 @@
+.icon {
+    position: relative;
+    float: right;
+    margin: 0.5rem;
+    size: 1rem;
+}
+
+.wine {
+    align-items: center;
+    text-align: center;
+}
