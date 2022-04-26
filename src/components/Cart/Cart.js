@@ -5,21 +5,25 @@ import { Link } from 'react-router-dom'
 
 const Cart = () => {
 
-    const { cart, removeItem } = useContext(CartContext)
+    const { cart, totalCost, clearCart, finishBuy } = useContext(CartContext)
 
-    if(cart.length === 0) {
+    if(cart.lenght === 0) {
         return (
             <>
-                <h1>No hay productos</h1>
-                <Link to={`/`}>Inicio</Link>
+                <h2>Carrito vacío</h2>
+                <Link to={'/'}>Conocé nuestros productos</Link>
             </>
         )
-    } 
-
+    }
+    
     return (
         <>
-            <h1>Cart</h1>
-            <ItemCart/>
+            <div>
+                {cart.map(prod => <ItemCart key={prod.id}{...prod}/>)}
+                <p>Total: {totalCost()}</p>
+                <button onClick={()=>clearCart()}>Vaciar</button>
+                <button onClick={()=>finishBuy()}>Finalizar</button>
+            </div>
         </>
     )
 }
