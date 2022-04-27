@@ -3,6 +3,7 @@ import { useState, useEffect } from 'react'
 import { useParams } from 'react-router-dom'
 import { firestoreDb } from '../../services/firebase'
 import ItemList from '../ItemList/ItemList'
+import './ItemListContainer.css' 
 import { getProducts } from '../../asyncmock'
 
 const ItemListContainer = (props) => {
@@ -76,7 +77,7 @@ const ItemListContainer = (props) => {
 
                 ) 
                 :
-                <h3>Cargando...</h3> 
+                <span class="loader"></span>
             }
         </div>
         

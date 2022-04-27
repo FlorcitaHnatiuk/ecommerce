@@ -2,22 +2,16 @@ import CartContext from '../../context/CartContext'
 import { FaShoppingCart } from 'react-icons/fa'
 import { useContext } from 'react'
 import { Link } from 'react-router-dom'
-import { CartContainer, CartQuantity } from './CartWidget.elements'
-
+import './CartWidget.css'
 
 const CartWidget = () => {
 
     const { getQuantity } = useContext(CartContext)
     return (
         <>
-            <Link to={'/cart'}>
-                <CartContainer>
-                    <FaShoppingCart/>
-                    <CartQuantity>
-                        { getQuantity() }
-                    </CartQuantity>
-                </CartContainer>
-            </Link>
+            <div className={`${getQuantity() === 0 ? 'ocult' : 'hasProd'}`}>
+                <Link to='/cart'><FaShoppingCart /> { getQuantity() }</Link>
+            </div>
         </>
     )
 }

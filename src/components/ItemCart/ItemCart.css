@@ -1,0 +1,14 @@
+.prodCart{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    justify-content: center;
+    align-content: center;
+    padding: 20px;
+    width: 100%;
+}
+
+.prodCart p{
+    width: 200px; 
+}
+

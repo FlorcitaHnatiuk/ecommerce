@@ -1,7 +1,5 @@
 import ItemCount from '../ItemCount/ItemCount'
 import { ItemDetailContainer, Detail } from './ItemDetail.elements'
-import { AddToCart } from '../ItemCount/ItemCount.elements'
-import { Link } from 'react-router-dom'
 import { useState, useContext } from 'react'
 import CartContext from '../../context/CartContext'
 import { useNotification } from '../../notification/Notification'
