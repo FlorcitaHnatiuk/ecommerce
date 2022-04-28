@@ -1,11 +1,11 @@
 import { useState } from 'react'
 import { Button, Quantity, Counter, AddToCart } from './ItemCount.elements';
 
-const ItemCount = ({initial, stock, onAdd}) => {
+const ItemCount = ({initial=1, stock, onAdd}) => {
     const [count, setCount] = useState(initial)
 
     const decrement = () => {
-        if (count > initial){
+        if ((count > 1)){
             setCount(count - 1)
         }
     }

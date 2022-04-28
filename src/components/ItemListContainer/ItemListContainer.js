@@ -74,7 +74,6 @@ const ItemListContainer = (props) => {
                     <div>
                         <h1>No hay productos</h1>
                     </div>
-
                 ) 
                 :
                 <span class="loader"></span>
