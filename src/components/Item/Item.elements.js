@@ -6,8 +6,6 @@ export const ItemContainer = styled.div `
     -webkit-flex-flow: row wrap;
     flex-flow: row wrap;
     float: left;
-    height: 100%;
-    min-height: 1px;
     justify-content: space-between;
 `;
 

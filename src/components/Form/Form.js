@@ -1,62 +1,92 @@
-import { useState } from 'react'
+import './Form.css'
+import CartContext from "../../context/CartContext"
+import { useContext, useState } from "react"
+import { getDocs, writeBatch, query, where, collection, documentId, addDoc } from 'firebase/firestore'
+import { firestoreDb } from '../../services/firebase/index'
 
 const Form = () => {
 
     const [input, setInput] = useState('')
+    const [loading, setLoading] = useState(false)
+
+    const { cart, totalCost } = useContext(CartContext)
 
     const handleSubmit = (e) => {
-        e.preventDefault() //prevengo que se actualice la página
-        console.log(input)
+        e.preventDefault()
     }
-    
-/*     const handleKeyDown = (e) => {
-        console.log(e)
-        if(e.code === 'Space') { // evita que se escriban espacios en ese input
-            e.preventDefault()
+
+    const handleChange = (event) => {
+        const name = event.target.name;
+        const value = event.target.value;
+        setInput(values => ({ ...values, [name]: value }))
+    }
+
+
+    const createOrder = () => {
+        setLoading(true)
+
+        const objOrder = {
+            buyer: input,
+            total: totalCost(),
+            date: new Date
         }
-    } */
+
+        const ids = cart.map(prod => prod.id)
+
+        const batch = writeBatch(firestoreDb)
+
+        const collectionRef = collection(firestoreDb, 'products')
+
+        const outOfStock = []
+
+        getDocs(query(collectionRef, where(documentId(), 'in', ids)))
+            .then(response => {
+                response.docs.forEach(doc => {
+                    const dataDoc = doc.data()
+                    const prodQuantity = cart.find(prod => prod.id === doc.id)?.quantity
+
+                    if (dataDoc.stock >= prodQuantity) {
+                        batch.update(doc.ref, { stock: dataDoc.stock - prodQuantity })
+                    } else {
+                        outOfStock.push({ id: doc.id, ...dataDoc })
+                    }
+                })
+            }).then(() => {
+                if (outOfStock.length === 0) {
+                    const collectionRef = collection(firestoreDb, 'orders')
+                    return addDoc(collectionRef, objOrder)
+                } else {
+                    return Promise.reject({ name: 'outOfStockError', products: outOfStock })
+                }
+            }).then(({ id }) => {
+                batch.commit()
+                console.log(`El id de la orden es ${id}`)
+            }).catch(error => {
+                console.log(error)
+            }).finally(() => {
+                setLoading(false)
+            })
+
+    }
+
+    if (loading) {
+        return <span class="loader"></span>
+    }
+
 
     return (
-
-<div className="contenedor">
-    <div className="wrapper animated bounceInLeft">
-        <div className="info-empresa">
-            <ul className="servicios">
-                <li><i className="fa fa-map-marker"></i> Calle Cualquiera, 44. 88880. Ciudad (Provincia)</li>
-                <li><i className="fa fa-mobile"></i> 555 555 000</li>
-                <li><i className="fa fa-envelope"></i> info@empresa.com</li>
-            </ul>
-        </div>
-        <div className="contacto">
-            <form className="formulario" onSubmit={handleSubmit}>
-                <p>
-                    <label>Nombre</label>
-                    <input type="text" name="nombre" onChange={(e) => setInput(e.target.value)} required/>
-                </p>
-                <p>
-                    <label>Apellido</label>
-                    <input type="text" onChange={(e) => setInput(e.target.value)} name="empresa"/>
-                </p>
-                <p>
-                    <label>Correo</label>
-                    <input type="email" onChange={(e) => setInput(e.target.value)} name="email" required/>
-                </p>
-                <p>
-                    <label>Teléfono</label>
-                    <input type="text" onChange={(e) => setInput(e.target.value)} name="teléfono" required/>
-                </p>
-                <p class="full">
-                    <label>Mensaje</label>
-                    <textarea name="mensaje" onChange={(e) => setInput(e.target.value)} required></textarea>
-                </p>
-                <p class="full">
-                    <button type='submit' className="boton-enviar">Enviar</button>
-                </p>
-            </form>
-        </div>
-    </div>
-</div>
-
+        <form onSubmit={handleSubmit}>
+            <div>
+                <div className='Form'>
+                    <h1>Tus datos</h1>
+                    <label>Nombre: <input type='text' onChange={handleChange} name="nombre" value={input.nombre}/></label>
+                    <label>Email: <input type='text' onChange={handleChange} name="correo" value={input.correo}/></label>
+                    <label>Dirección: <input type='text' onChange={handleChange} name="direccion" value={input.direccion}/></label>
+                    <label>Teléfono:<input type="number" onChange={handleChange} name="telefono" value={input.telefono}/></label>
+                    <button onClick={() => createOrder()} className="Finish">Finalizar compra</button>
+                </div>
+            </div>
+        </form>
     )
 }
 

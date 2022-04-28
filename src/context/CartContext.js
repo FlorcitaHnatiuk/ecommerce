@@ -60,11 +60,6 @@ export const CartContextProvider = ({ children }) => {
         return total
     }
 
-    const finishBuy = () => {
-        let finishBuy = alert('Buy completed')
-        return finishBuy
-    }
-
     return (
         <CartContext.Provider value={{
             cart,
@@ -75,7 +70,6 @@ export const CartContextProvider = ({ children }) => {
             removeItem,
             getQuantityProd,
             totalCost,
-            finishBuy
         }}>
             {children}
         </CartContext.Provider>

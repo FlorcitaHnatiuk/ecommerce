@@ -1,15 +1,16 @@
 import './Notification.css'
 import { useState, createContext, useContext } from 'react'
+import 'react-toastify/dist/ReactToastify.css';
 
 const Notification = ({ message, severity }) => {
 
 const notificationStyles = {
     position: 'absolute',
-    top: 200,
+    top: 220,
     right: 10,
     width: 'auto',
     height: 'auto',
-    padding: '10px',
+    padding: '25px',
     }
 
     if(message === '') {
