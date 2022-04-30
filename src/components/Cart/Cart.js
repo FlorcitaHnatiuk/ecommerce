@@ -20,10 +20,16 @@ const Cart = () => {
     return (
         <>
             <div>
+                <div className="PageHeader">
+                    <h2 className="CartTitle">Mi carrito</h2>
+                </div>
                 {cart.map(prod => <ItemCart key={prod.id}{...prod}/>)}
-                <p>Total: ${totalCost()}</p>
-                <Link className="empty" to={'/'} onClick={() => clearCart()}>Vaciar carrito</Link>
-                <Link className="continue" to={'/form'}>Continuar compra</Link>
+                <p className="Total">Total: ${totalCost()}</p>
+                <div className="Btns">
+                    <Link className="empty" to={'/'} onClick={() => clearCart()}>Vaciar carrito</Link>
+                    <Link className="continue" to={'/form'}>Continuar compra</Link>
+                </div>
+
             </div>
         </>
     )

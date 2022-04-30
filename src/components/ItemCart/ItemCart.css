@@ -12,3 +12,14 @@
     width: 200px; 
 }
 
+.RemoveButton {
+    padding: 15px;
+    border: none;
+    cursor: pointer;
+    font-family: 'BIZ UDPMincho', serif;
+    margin: 25px;
+    background-color: #D22779;
+    color: white;
+    border-radius: 50%;
+    font-weight: bold;
+}

@@ -1,20 +1,49 @@
+.PageHeader {
+    margin: 0 35px;
+}
+
+.CartTitle {
+    font-family: 'BIZ UDPMincho', serif;
+    float: left;
+    font-size: 27px;
+    text-align: start;
+    line-height: 26.18px;
+    margin: 40px;
+}
+
+.Total {
+    font-weight: bold;
+    font-size: 20px;
+    margin-top: 50px;
+    margin-bottom: 50px;
+}
+
+.Btns {
+    margin-top: 50px;
+    margin-bottom: 50px;
+}
+
 .empty {
-    padding: 5px;
+    padding: 15px;
     width: 200px;
     border: none;
-    position: relative;
+    border-radius: 5px;
     cursor: pointer;
     font-family: 'BIZ UDPMincho', serif;
     margin: 25px;
+    background-color: #D22779;
+    color: white;
 }
 
 .continue {
-    padding: 5px;
+    padding: 15px;
     width: 200px;
     border: none;
-    border-radius: 5%;
-    position: relative;
+    border-radius: 5px;
     cursor: pointer;
     font-family: 'BIZ UDPMincho', serif;
     margin: 25px;
+    background-color: #D22779;
+    color: white;
 }
+
