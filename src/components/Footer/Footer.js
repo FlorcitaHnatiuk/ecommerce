@@ -1,5 +1,7 @@
 import './Footer.css'
 import { FaCcVisa, FaBitcoin, FaDollarSign } from "react-icons/fa";
+import React from 'react';
+import { SocialIcon } from 'react-social-icons';
 
 const Footer = () =>{
 
@@ -19,6 +21,13 @@ const Footer = () =>{
                         </ul> 
                     </div>
                 </div>
+            </div>
+            <div className="container">
+                <ul>
+                    <li className="social"><SocialIcon url="https://www.linkedin.com/in/florenciahnatiuk/" /></li>
+                    <li className="social"><SocialIcon url="https://github.com/FlorcitaHnatiuk" network="github" bgColor="#ff5a01"/></li>
+                    <li className="social"><SocialIcon url="https://twitter.com/popichulet" network="twitter" /></li>
+                </ul>
             </div>
             <div className="container">
                 <p className="copyright">Florcita © 2022</p>

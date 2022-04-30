@@ -1,4 +1,4 @@
-import { ItemContainer, Card, Icon } from './Item.elements'
+import { ItemContainer, Card } from './Item.elements'
 import { Link } from 'react-router-dom'
 import './Item.css' 
 

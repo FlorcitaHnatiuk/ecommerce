@@ -11,7 +11,6 @@ import { CartContextProvider } from './context/CartContext'
 import { NotificationProvider } from './notification/Notification'
 import { Navbar } from "./components/Navbar/Navbar"
 
-
 function App() {
   
   return (

@@ -1,8 +1,10 @@
 import './Form.css'
 import CartContext from "../../context/CartContext"
+import Buy from '../Buy/Buy'
 import { useContext, useState } from "react"
 import { getDocs, writeBatch, query, where, collection, documentId, addDoc } from 'firebase/firestore'
 import { firestoreDb } from '../../services/firebase/index'
+import { Link } from 'react-router-dom'
 
 const Form = () => {
 
@@ -70,7 +72,7 @@ const Form = () => {
     }
 
     if (loading) {
-        return <span class="loader"></span>
+        return <h1>Generando orden de compra</h1>
     }
 
 

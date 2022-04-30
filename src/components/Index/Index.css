@@ -1,3 +1,8 @@
 .titulo {
     font-size: 86px;
 }
+
+.presentation{
+    display: flex;
+    justify-content: center;
+}

@@ -62,21 +62,14 @@ const ItemListContainer = (props) => {
     return (
         
         <div onClick={handleClick}>
-            {
-            show ?
-                (products.length > 0 ?
-                    <>
-                        <h2 className='greeting'>{props.greeting}</h2>
-                        <ItemList products={products}/>
-                        
-                    </>
-                    :
-                    <div>
-                        <h1>No hay productos</h1>
-                    </div>
-                ) 
-                :
-                <span class="loader"></span>
+            {   show ?
+                ( products.length > 0 ? 
+                    <ItemList products={products}/>
+                
+                :   <h3>No se encontraron productos</h3>
+                )
+                : <div className='spinContainer'><p className='spinner'></p></div>
+
             }
         </div>
         

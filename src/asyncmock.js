@@ -11,7 +11,7 @@ const products = [
         enologist: 'Alejandro Vigil',
         place: 'Altamira, San Carlos. Provincia de Mendoza, Argentina',
         barricado: '12 meses en roble francés, 30% nuevo.',
-        stock: '10',
+        stock: 100,
         img: 'https://http2.mlstatic.com/D_NQ_NP_906646-MLA42790464402_072020-O.webp'
     },
     { 
@@ -25,7 +25,7 @@ const products = [
         enologist: 'Daniel Pi',
         place: 'Gualtallary, Valle de Uco Provincia de Mendoza, Argentina',
         barricado: '12 meses en roble francés, 30% nuevo.',
-        stock: '10',
+        stock: 100,
         img: 'https://http2.mlstatic.com/D_NQ_NP_913000-MLA31611719047_072019-V.webp'
     },
     { 
@@ -39,7 +39,7 @@ const products = [
         enologist: 'Gustavo Bauzá',
         place: 'Valle de Uco, Provincia de Mendoza, Argentina',
         barricado: 'Método Charmat lungo (12 meses)',
-        stock: '10',
+        stock: 100,
         img: 'https://http2.mlstatic.com/D_NQ_NP_763012-MLA43927328121_102020-O.webp'
     },
     { 
@@ -53,7 +53,7 @@ const products = [
         enologist: 'Marcelo Miras',
         place: 'San Patricio del Chañar. Provincia de Neuquén, Argentina.',
         barricado: '6 meses en roble francés y americano.',
-        stock: '10',
+        stock: 100,
         img: 'https://http2.mlstatic.com/D_NQ_NP_2X_803198-MLA48132282577_112021-F.webp'
     },
     { 
@@ -67,7 +67,7 @@ const products = [
         enologist: 'Mariano Di Paola',
         place: 'Tupungato. Provincia de Mendoza, Argentina',
         barricado: 'Crianza: 7 meses. Roble: Francés, 50% nuevo, 50% 2do. y 3er. uso.',
-        stock: '10',
+        stock: 100,
         img: 'https://http2.mlstatic.com/D_NQ_NP_705850-MLA31907063954_082019-O.webp'
     },
     { 
@@ -81,7 +81,7 @@ const products = [
         enologist: 'Alejandro Vigil',
         place: 'Gualtallary. Provincia de Mendoza, Argentina',
         barricado: '14 meses de crianza en barricas de roble francés',
-        stock: '10',
+        stock: 100,
         img: 'https://http2.mlstatic.com/D_NQ_NP_608241-MLA43162458201_082020-O.webp'
     },
     { 
@@ -95,7 +95,7 @@ const products = [
         enologist: 'Santiago Mayorga',
         place: 'Gualtallary, Provincia de Mendoza, Argentina',
         barricado: '12 meses en barricas francesas (60% del vino)',
-        stock: '10',
+        stock: 100,
         img: 'https://http2.mlstatic.com/D_NQ_NP_643942-MLA46089723072_052021-V.webp'
     },
     { 
@@ -109,7 +109,7 @@ const products = [
         enologist: 'José Morales',
         place: 'Valle de Pedernal, San Juan, Argentina',
         barricado: '22 meses en barricas (70% americanas y 30% francesas) más estiba de 1 año en botella',
-        stock: '10',
+        stock: 100,
         img: 'https://http2.mlstatic.com/D_NQ_NP_878659-MLA47397903796_092021-O.webp'
     },
     { 
@@ -123,7 +123,7 @@ const products = [
         enologist: 'Gustavo Rearte',
         place: 'Medrano, Lujan de Cuyo & Tupungato, Mendoza, Argentina',
         barricado: '9 meses en barricas de roble francés de 2do y 3er uso',
-        stock: '10',
+        stock: 100,
         img: 'https://http2.mlstatic.com/D_NQ_NP_708139-MLA44600169684_012021-O.webp'
     },
     { 
@@ -137,7 +137,7 @@ const products = [
         enologist: 'Matias Riccitelli',
         place: 'Gualtallary, Mendoza, Argentina',
         barricado: 'Añejado en huevos de concreto',
-        stock: '10',
+        stock: 100,
         img: 'https://http2.mlstatic.com/D_NQ_NP_711773-MLA44959921508_022021-V.webp'
     },
     { 
@@ -151,7 +151,7 @@ const products = [
         enologist: 'Karim Mussi Saffie',
         place: 'La Consulta, Valle de Uco, Mendoza',
         barricado: 'Crianza de 12 meses en barricas francesas',
-        stock: '10',
+        stock: 100,
         img: 'https://http2.mlstatic.com/D_NQ_NP_837916-MLA48440589371_122021-V.webp'
     },
     { 
@@ -165,7 +165,7 @@ const products = [
         enologist: 'Rubén Ruffo',
         place: 'Maipú, Provincia de Mendoza, Argentina',
         barricado: 'En tanque de acero inoxidable',
-        stock: '10',
+        stock: 100,
         img: 'https://http2.mlstatic.com/D_NQ_NP_910699-MLA48483482523_122021-O.webp'
     },
     { 
@@ -179,7 +179,7 @@ const products = [
         enologist: '',
         place: 'Valle de Uco, Provincia de Mendoza, Argentina',
         barricado: 'Tradicional / Champenoise',
-        stock: '10',
+        stock: 100,
         img: '	https://http2.mlstatic.com/D_NQ_NP_656109-MLA45638435600_042021-V.webp'
     },
     { 
@@ -193,7 +193,7 @@ const products = [
         enologist: 'Rubén Ruffo',
         place: 'Maipú, Provincia de Mendoza, Argentina',
         barricado: 'En tanque de acero inoxidable',
-        stock: '10',
+        stock: 100,
         img: 'https://http2.mlstatic.com/D_NQ_NP_862706-MLA46915818817_072021-O.webp'
     },
 
@@ -208,7 +208,7 @@ const products = [
         enologist: 'Sebastian Zuccardi',
         place: 'Tupungato (San José, La Carrera) y Tunuyán (San Pablo), Valle de Uco, Mendoza.',
         barricado: '50 meses sobre levaduras - Segunda fermentacion en botella',
-        stock: '10',
+        stock: 100,
         img: '	https://http2.mlstatic.com/D_NQ_NP_714195-MLA44282782637_122020-O.webp'
     },
     { 
@@ -222,7 +222,7 @@ const products = [
         enologist: 'Walter Bressia',
         place: 'Agrelo, Luján de Cuyo, Provincia de Mendoza, Argentina.',
         barricado: 'Tradicional',
-        stock: '10',
+        stock: 100,
         img: 'https://http2.mlstatic.com/D_NQ_NP_860833-MLA43622419251_092020-O.webp'
     },
     { 
@@ -236,7 +236,7 @@ const products = [
         enologist: 'Alejandro Sejanovich',
         place: 'Los Árboles, Tunuyán, Valle de Uco, Mendoza',
         barricado: '',
-        stock: '10',
+        stock: 100,
         img: 'https://http2.mlstatic.com/D_NQ_NP_981672-MLA44104930352_112020-V.webp'
     },
     { 
@@ -250,7 +250,7 @@ const products = [
         enologist: 'Matias Riccitelli',
         place: 'Guerrico, Patagonia, Rio Negro',
         barricado: 'La crianza se realiza en barricas de roble francés de diferentes usos por 16 meses.',
-        stock: '10',
+        stock: 100,
         img: 'https://http2.mlstatic.com/D_NQ_NP_643076-MLA49398480848_032022-O.webp'
     },
     { 
@@ -264,7 +264,7 @@ const products = [
         enologist: 'Matias Riccitelli',
         place: 'Allen, Rio Negro, Patagonia',
         barricado: 'La crianza se realiza en barricas de roble francés de diferentes usos por 16 meses.',
-        stock: '10',
+        stock: 10,
         img: 'https://http2.mlstatic.com/D_NQ_NP_2X_838079-MLA31622350292_072019-T.webp'
     },
     { 
@@ -278,8 +278,8 @@ const products = [
         enologist: 'Matias Riccitelli',
         place: 'Allen, Rio Negro, Patagonia',
         barricado: '8 meses. 50% en barricas de roble francés y 50% en huevos de concreto',
-        stock: '10',
-        img: '	https://http2.mlstatic.com/D_NQ_NP_937872-MLA48280547515_112021-O.webp'
+        stock: 100,
+        img: 'https://http2.mlstatic.com/D_NQ_NP_937872-MLA48280547515_112021-O.webp'
     },
 ]
 
@@ -294,7 +294,7 @@ export const getCategories = () => {
     return new Promise (resolve => {
         setTimeout(() => {
             resolve(categories)
-        }, 100)
+        }, 3000)
     })
 }
 
@@ -302,7 +302,7 @@ export const getProducts = (categoryId) => {
     return new Promise (resolve => {
         setTimeout(() => {
             resolve(categoryId ? products.filter(prod => prod.category === categoryId) : products)
-        }, 100)
+        }, 3000)
     })
 }
 
@@ -310,7 +310,7 @@ export const getProductsbyId = (id) => {
     return new Promise (resolve => {
         setTimeout(() => {
             resolve(products.find(prod => prod.id === id))
-        }, 100)
+        }, 3000)
     })
 }
 
