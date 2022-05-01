@@ -1,6 +1,5 @@
 import './Form.css'
 import CartContext from "../../context/CartContext"
-import Buy from '../Modal/Modal'
 import { useContext, useState } from "react"
 import { getDocs, writeBatch, query, where, collection, documentId, addDoc } from 'firebase/firestore'
 import { firestoreDb } from '../../services/firebase/index'
@@ -10,6 +9,7 @@ const Form = () => {
 
     const [input, setInput] = useState('')
     const [loading, setLoading] = useState(false)
+    const [orderId, setOrderId] = useState(null)
 
     const { cart, totalCost } = useContext(CartContext)
 
@@ -23,12 +23,11 @@ const Form = () => {
         setInput(values => ({ ...values, [name]: value }))
     }
 
-
     const createOrder = () => {
         setLoading(true)
 
         const objOrder = {
-            items: cart(),
+            prodOrder: cart.map(prod => { return ({ id: prod.id, name: prod.name, quantity: prod.quantity, priceUni: prod.price }) }),
             buyer: input,
             total: totalCost(),
             date: new Date
@@ -63,17 +62,28 @@ const Form = () => {
                 }
             }).then(({ id }) => {
                 batch.commit()
+                const orderId = id
                 console.log(`El id de la orden es ${id}`)
+                return setOrderId(orderId)
             }).catch(error => {
                 console.log(error)
             }).finally(() => {
                 setLoading(false)
             })
+    }
 
+    if (orderId) {
+        return (
+            <>  
+                <h1 className="BuyTitle">Gracias por tu compra!</h1>
+                <h3 className="Code">Tu código es: {orderId}</h3>
+                <p className="Code">Pronto nos contactaremos para coordinar la entrega</p>
+            </>
+        )
     }
 
     if (loading) {
-        return <h1>Generando orden de compra</h1>
+        return <h1>Procesando compra</h1>
     }
 
 

@@ -5,6 +5,18 @@ input {
     border: none;
 }
 
+.BuyTitle {
+    font-family: 'BIZ UDPMincho', serif;
+    margin: 5rem 0;
+}
+
+.Code {
+    margin: 3rem 0;
+    font-weight: bold;
+    font-family: 'BIZ UDPMincho', serif;
+    color:black;
+}
+
 .Form{
     display: flex;
     align-items: center;
