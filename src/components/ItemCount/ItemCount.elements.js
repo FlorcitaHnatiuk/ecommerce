@@ -2,6 +2,8 @@ import styled from 'styled-components';
 
 export const Counter = styled.div `
     text-align: center;
+    align-items: center;
+    align-self: center;
     display: flex;
 `;
 

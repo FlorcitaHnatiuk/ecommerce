@@ -3,6 +3,7 @@ import { ItemDetailContainer, Detail } from './ItemDetail.elements'
 import { useState, useContext } from 'react'
 import CartContext from '../../context/CartContext'
 import {Link} from 'react-router-dom'
+import './ItemDetail.css'
 import { useNotification } from '../../notification/Notification'
 
 const ItemDetail = ({ id, name, price, img, variety, productor, corte, enologist, place, barricado, stock }) => {
@@ -26,27 +27,31 @@ const ItemDetail = ({ id, name, price, img, variety, productor, corte, enologist
     }
 
     return (
-        
-        <ItemDetailContainer>
+        <>
             <div>
-                <img src={img} alt={name}/>
+                <h2 className="Title">{name}</h2>
             </div>
-            <div>
-                <h2>{name}</h2>
-                <p>${price}</p>
-                <Detail>
-                    <li>Varietal: {variety}</li>
-                    <li>Productor: {productor}</li>
-                    <li>Corte: {corte}</li>
-                    <li>Enólogo: {enologist}</li>
-                    <li>{place}</li>
-                    <li>Barricado: {barricado}</li>
-                </Detail>
+            <ItemDetailContainer>
                 <div>
-                        {false ? <Link to='/cart' className='goCart'><span>Ir al carrito</span></Link> : <ItemCount initial={getQuantityProd(id)} stock={stock} onAdd={handleOnAdd}/>}
+                    <img src={img} alt={name} />
                 </div>
-            </div>  
-        </ItemDetailContainer>
+                <div>
+                    <Detail>
+                        <p className="Price">Precio unitario: ${price}</p>
+                        <p>Varietal: {variety}</p>
+                        <p>Productor: {productor}</p>
+                        <p>Corte: {corte}</p>
+                        <p>Enólogo: {enologist}</p>
+                        <p>{place}</p>
+                        <p>Barricado: {barricado}</p>
+                    </Detail>
+                    <div>
+                        {false ? <Link to='/cart' className='goCart'><span>Ir al carrito</span></Link> : <ItemCount initial={getQuantityProd(id)} stock={stock} onAdd={handleOnAdd} />}
+                    </div>
+                </div>
+            </ItemDetailContainer>
+        </>
+
         )
     }
 

@@ -1,6 +1,6 @@
 import './Form.css'
 import CartContext from "../../context/CartContext"
-import Buy from '../Buy/Buy'
+import Buy from '../Modal/Modal'
 import { useContext, useState } from "react"
 import { getDocs, writeBatch, query, where, collection, documentId, addDoc } from 'firebase/firestore'
 import { firestoreDb } from '../../services/firebase/index'
@@ -28,6 +28,7 @@ const Form = () => {
         setLoading(true)
 
         const objOrder = {
+            items: cart(),
             buyer: input,
             total: totalCost(),
             date: new Date

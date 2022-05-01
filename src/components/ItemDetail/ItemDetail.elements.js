@@ -9,8 +9,10 @@ export const ItemDetailContainer = styled.div `
     margin: 100px;
 `;
 
-export const Detail = styled.ul `
+export const Detail = styled.div `
     list-style: none;
     font-size: 16px;
     text-align: left;
+    margin-left: 4rem;
+    line-height: 3rem;
 `;
