@@ -19,9 +19,9 @@ const ItemListContainer = (props) => {
                 console.log('Volvio');
                 console.log(prods);
     
-                prods.map(({ name, price, img, category, stock, variety, corte, enologist, place, barricado }) => {
+                prods.map(({ name, price, img, category, stock, productor, variety, corte, enologist, place, barricado }) => {
     
-                    addDoc(collection(firestoreDb, "products"), { name, price, img, category, stock, variety, corte, enologist, place, barricado }).then(prods => {
+                    addDoc(collection(firestoreDb, "products"), { name, price, img, category, stock, productor, variety, corte, enologist, place, barricado }).then(prods => {
                         console.log('Volvio');
                         console.log(prods);
                     }).catch(error => {
@@ -65,10 +65,15 @@ const ItemListContainer = (props) => {
             {   show ?
                 ( products.length > 0 ? 
                     <ItemList products={products}/>
-                
-                :   <h3>No se encontraron productos</h3>
+                :   
+                <div>
+                    <h2>No se encontraron productos</h2>
+                </div>
                 )
-                : <div className='spinContainer'><p className='spinner'></p></div>
+                : 
+                <div className='spinContainer'>
+                    <p className='spinner'></p>
+                </div>
 
             }
         </div>

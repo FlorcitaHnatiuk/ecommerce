@@ -2,13 +2,13 @@ import ItemCount from '../ItemCount/ItemCount'
 import { ItemDetailContainer, Detail } from './ItemDetail.elements'
 import { useState, useContext } from 'react'
 import CartContext from '../../context/CartContext'
-import {Link} from 'react-router-dom'
+import { Link } from 'react-router-dom'
 import './ItemDetail.css'
 import { useNotification } from '../../notification/Notification'
 
 const ItemDetail = ({ id, name, price, img, variety, productor, corte, enologist, place, barricado, stock }) => {
-    
-    const [quantity, setQuantity]= useState(0)
+
+    const [quantity, setQuantity] = useState(0)
 
     const { addItem, isInCart, getQuantityProd } = useContext(CartContext)
 
@@ -20,7 +20,7 @@ const ItemDetail = ({ id, name, price, img, variety, productor, corte, enologist
         const productObj = {
             id, name, price
         }
-        addItem ({...productObj, quantity: count})
+        addItem({ ...productObj, quantity: count })
 
         setNotification('success', `agregaste ${count} ${name}`)
 
@@ -45,14 +45,13 @@ const ItemDetail = ({ id, name, price, img, variety, productor, corte, enologist
                         <p>{place}</p>
                         <p>Barricado: {barricado}</p>
                     </Detail>
-                    <div>
-                        {false ? <Link to='/cart' className='goCart'><span>Ir al carrito</span></Link> : <ItemCount initial={getQuantityProd(id)} stock={stock} onAdd={handleOnAdd} />}
-                    </div>
+                </div>
+                <div>
+                    {false ? <Link to='/cart' className='goCart'><span>Ir al carrito</span></Link> : <ItemCount initial={getQuantityProd(id)} stock={stock} onAdd={handleOnAdd} />}
                 </div>
             </ItemDetailContainer>
         </>
-
-        )
-    }
+    )
+}
 
 export default ItemDetail
