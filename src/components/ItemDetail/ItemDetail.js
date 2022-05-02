@@ -33,7 +33,7 @@ const ItemDetail = ({ id, name, price, img, variety, productor, corte, enologist
             </div>
             <ItemDetailContainer>
                 <div>
-                    <img src={img} alt={name} />
+                    <img className="detailImg" src={img} alt={name} />
                 </div>
                 <div>
                     <Detail>

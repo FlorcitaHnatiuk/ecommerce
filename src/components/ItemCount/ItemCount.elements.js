@@ -27,7 +27,8 @@ export const Quantity = styled.p `
 
 export const AddToCart = styled.button `
     font-size: 16px;
-    font-weight: 600;
+    font-weight: 400;
+    font-family: 'BIZ UDPMincho', serif;
     color: white;
     text-align: center;
     line-height: 48px;
