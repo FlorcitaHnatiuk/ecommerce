@@ -92,10 +92,10 @@ const Form = () => {
             <div className='Form'>
                 <div className='Field'>
                     <div className='Inputs'>
-                        <label><input placeholder="Nombre y apellido" type='text' onChange={handleChange} name="nombre" value={input.nombre}/></label>
-                        <label><input placeholder="Email" type='text' onChange={handleChange} name="correo" value={input.correo}/></label>
-                        <label><input placeholder="Dirección de envío" type='text' onChange={handleChange} name="direccion" value={input.direccion}/></label>
-                        <label><input placeholder="Teléfono" type="text" onChange={handleChange} name="telefono" value={input.telefono}/></label>
+                        <label><input placeholder="Nombre y apellido" type='text' onChange={handleChange} name="nombre" value={input.nombre || ""}/></label>
+                        <label><input placeholder="Email" type='text' onChange={handleChange} name="correo" value={input.correo || ""}/></label>
+                        <label><input placeholder="Dirección de envío" type='text' onChange={handleChange} name="direccion" value={input.direccion || ""}/></label>
+                        <label><input placeholder="Teléfono" type="text" onChange={handleChange} name="telefono" value={input.telefono || ""}/></label>
                     </div>
                     <div>
                         <button onClick={() => createOrder()} className="Finish">Finalizar compra</button>
