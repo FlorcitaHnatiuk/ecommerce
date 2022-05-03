@@ -1,26 +1,25 @@
 
-import React, { useState, useEffect } from 'react';
+import React, { useState } from 'react';
 import CartWidget from '../CartWidget/CartWidget';
 import { Link, NavLink } from 'react-router-dom'
-import { firestoreDb } from '../../services/firebase'
-import { getDocs, collection } from 'firebase/firestore'
+import { getCategoriesNavbar} from '../../services/firebase/firestore'
+import { useAsync } from '../../hooks/useAsync'
 import './Navbar.css'
 
 export const Navbar = () => {
 
     const [categories, setCategories] = useState([])
+    const [loading, setLoading] = useState(true)
 
-    useEffect (() => {
-        getDocs(collection(firestoreDb, 'categories')).then(response => {
-            const categories = response.docs.map(doc => {
-                return { id: doc.id, ...doc.data()}
-            })
-            setCategories(categories)
-        })
-    }, [])
+    useAsync(
+        setLoading,
+        () => getCategoriesNavbar(categories),
+        setCategories,
+        () => console.log('Hubo un error en el Navbar')
+    )
 
     return (
-        <nav className="NavBar" >
+        <nav className="NavBar">
             <Link to='/'>
                 <h1 className="neon">La Vinería</h1>
             </Link>

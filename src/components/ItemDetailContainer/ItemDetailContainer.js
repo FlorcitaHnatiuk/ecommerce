@@ -1,43 +1,38 @@
-import ItemDetail from '../ItemDetail/ItemDetail'
-import { useState, useEffect } from 'react'
-import { useParams } from 'react-router-dom'
-import { firestoreDb } from '../../services/firebase'
-import { getDoc, doc } from 'firebase/firestore'
 import './ItemDetailContainer.css'
+import ItemDetail from '../ItemDetail/ItemDetail'
+import { useParams } from 'react-router-dom'
+import { getItem } from '../../services/firebase/firestore'
+import { useAsync } from '../../hooks/useAsync'
+import { useState } from 'react'
 
-const ItemDetailContainer = ({ setCart, cart }) => {
-    const [product, setProduct] = useState()
-    const [loading, setLoading] = useState(false)
+const ItemDetailContainer = () => {
+    const [item, setItem] = useState()
+
+    const {productId} = useParams()
+    const [loading, setLoading] = useState(true)
+
+    useAsync(
+        setLoading,
+        () => getItem(productId),
+        setItem,
+        () => console.log('Hubo un error en ItemDetailContainer'),
+        [productId]
+    )
+
+    if(loading) {
+        return <div><p className='spinner'></p></div>
+    }
+
+    if(item.length === 0) {
+        return <h2>El vino que buscás no existe</h2>
+    }
     
-    const { productId } = useParams()
-
-    useEffect(() => {
-        getDoc(doc(firestoreDb, 'products', productId)).then(response => {
-            console.log(response)
-            const product = { id: response.id, ...response.data()}
-            setProduct(product)
-            setLoading(true)
-
-        })
-
-        return (() => {
-            setProduct()
-        })
-
-    }, [productId])
-
-
-    return (
+    return ( 
         <div>
-        {
-            loading ?
-            (product ?
-                <ItemDetail  {...product} setCart={setCart} cart={cart}/>:
-                <h1>El producto no existe</h1>)
-            :
-            <p className='spinner'></p>
-        }
-    </div>
-    )    
+            <ItemDetail {...item}/> 
+        </div>
+    )
 }
+
+
 export default ItemDetailContainer

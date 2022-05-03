@@ -6,7 +6,7 @@ import { firestoreDb } from '../../services/firebase/index'
 
 const Form = () => {
 
-    const [input, setInput] = useState('')
+    const [input, setInput] = useState({nombre: '', telefono: '', direccion: '', correo: '' })
     const [loading, setLoading] = useState(false)
     const [orderId, setOrderId] = useState(null)
 

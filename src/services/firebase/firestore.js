@@ -1,6 +1,21 @@
 import { firestoreDb } from "./index"
-import { getDocs, query, collection, where } from "firebase/firestore"
+import { getDocs, query, collection, where, getDoc, doc } from "firebase/firestore"
 import { createAdapterProductFromFirestore } from "../../adapters/productAdapter"
+
+export const getCategoriesNavbar = () => {
+    return new Promise ((resolve,reject) => {
+
+        getDocs(collection(firestoreDb, 'categories')).then(response => {
+            const categories = response.docs.map(doc => {
+                return { id: doc.id, ...doc.data()}
+            })
+            resolve(categories)
+        })
+        .catch(error => {
+            reject(error)
+        })
+    })
+}
 
 export const getProducts = (categoryId) => {
     return new Promise ((resolve,reject) => {
@@ -19,3 +34,17 @@ export const getProducts = (categoryId) => {
         })
     })
 }
+
+export const getItem = (productId) => {
+    return new Promise ((resolve,reject) => {
+
+        getDoc(doc(firestoreDb, 'products', productId)).then(response => {
+            const product = { id: response.id, ...response.data()}
+            resolve(product)
+        })
+        .catch(error => {
+            reject(error)
+        })
+    })
+}
+
