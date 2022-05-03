@@ -3,7 +3,6 @@ import CartContext from "../../context/CartContext"
 import { useContext, useState } from "react"
 import { getDocs, writeBatch, query, where, collection, documentId, addDoc } from 'firebase/firestore'
 import { firestoreDb } from '../../services/firebase/index'
-import { Link } from 'react-router-dom'
 
 const Form = () => {
 
