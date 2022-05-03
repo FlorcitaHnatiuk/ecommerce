@@ -1,81 +1,37 @@
-import { getDocs, collection, query, where, addDoc } from 'firebase/firestore'
-import { useState, useEffect } from 'react'
+import { useState } from 'react'
 import { useParams } from 'react-router-dom'
-import { firestoreDb } from '../../services/firebase'
+import { useAsync } from '../../hooks/useAsync'
+import { getProducts } from '../../services/firebase/firestore'
 import ItemList from '../ItemList/ItemList'
 import './ItemListContainer.css' 
-import { getProducts } from '../../asyncmock'
 
 const ItemListContainer = (props) => {
 
     const [products, setProducts] = useState([])
-    const [show, setShow] = useState(false)
+    const [loading, setLoading] = useState(false)
 
     const { categoryId } = useParams()
 
-    
-        const cargarDatos = () => {
-            getProducts().then(prods => {
-                console.log('Volvio');
-                console.log(prods);
-    
-                prods.map(({ name, price, img, category, stock, productor, variety, corte, enologist, place, barricado }) => {
-    
-                    addDoc(collection(firestoreDb, "products"), { name, price, img, category, stock, productor, variety, corte, enologist, place, barricado }).then(prods => {
-                        console.log('Volvio');
-                        console.log(prods);
-                    }).catch(error => {
-                        console.error(error);
-                    }).finally(() => {
-                        console.log('Finalizó la promesa');
-                    });
-                });
-    
-            }).catch(error => {
-                console.error(error);
-            }).finally(() => {
-                console.log('Finalizó la promesa');
-            });
-        };
+    useAsync(
+        setLoading,
+        () => getProducts(categoryId),
+        setProducts,
+        () => console.log('Se produjo un error en Item List Container'),
+        [categoryId]
+    )
 
+    if(loading) {
+        return <div className='spinnerContainer'><p className='spinner'></p></div>
+    }
 
-    useEffect(() => {
-
-        const collectionRef = categoryId 
-        ? query(collection (firestoreDb, 'products'), where('category', '==', categoryId))
-        : collection (firestoreDb, 'products')
-
-        getDocs(collectionRef).then(response => {
-            console.log(response)
-            const products = response.docs.map(doc => {
-                return { id: doc.id, ...doc.data()}
-            })
-            setProducts(products)
-            setShow(true)
-        })
-    }, [categoryId])
-
-    const handleClick = () => {
-        console.log('click')
+    if(products.length === 0) {
+        return <h2>No hay productos</h2>
     }
 
     return (
         
-        <div onClick={handleClick}>
-            {   show ?
-                ( products.length > 0 ? 
-                    <ItemList products={products}/>
-                :   
-                <div>
-                    <h2>No se encontraron productos</h2>
-                </div>
-                )
-                : 
-                <div className='spinContainer'>
-                    <p className='spinner'></p>
-                </div>
-
-            }
+        <div>
+            <ItemList products={products} />
         </div>
         
     )

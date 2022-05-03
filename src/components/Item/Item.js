@@ -15,7 +15,7 @@ const Item = ({ name, price, img, id }) => {
 
                 <div className="card">
                     <div className="img">
-                        <img className="icon" src="../img/grapes.PNG"/>      
+                        <img className="icon" src="../img/grapes.PNG" alt="grapes icon"/>      
                         <img className="wine" width="150" height="250" src={img} alt={name}/>
                     </div>
                     <h2>{name}</h2>
