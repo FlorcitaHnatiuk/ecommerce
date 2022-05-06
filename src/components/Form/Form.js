@@ -6,9 +6,10 @@ import { firestoreDb } from '../../services/firebase/index'
 
 const Form = () => {
 
-    const [input, setInput] = useState({nombre: '', telefono: '', direccion: '', correo: '' })
+    const [input, setInput] = useState({name: '', phone: '', address: '', mail: '', mailConfirm: '' })
     const [loading, setLoading] = useState(false)
     const [orderId, setOrderId] = useState(null)
+    const [buttonDisabled, setButtonDisabled] = useState(true)
 
     const { cart, totalCost } = useContext(CartContext)
 
@@ -16,15 +17,25 @@ const Form = () => {
         e.preventDefault()
     }
 
+    const onBlurHandler = (event) =>  {
+        if (input.mail === input.mailConfirm) {
+            console.log('hola')
+            setButtonDisabled(false)
+        }
+    }
+
     const handleChange = (event) => {
         const name = event.target.name;
         const value = event.target.value;
         setInput(values => ({ ...values, [name]: value }))
+        
     }
 
     const createOrder = () => {
+        console.log('chau')
+        
         setLoading(true)
-
+    
         const objOrder = {
             prodOrder: cart.map(prod => { return ({ id: prod.id, name: prod.name, quantity: prod.quantity, priceUni: prod.price }) }),
             buyer: input,
@@ -92,13 +103,14 @@ const Form = () => {
             <div className='Form'>
                 <div className='Field'>
                     <div className='Inputs'>
-                        <label><input placeholder="Nombre y apellido" type='text' onChange={handleChange} name="nombre" value={input.nombre || ""}/></label>
-                        <label><input placeholder="Email" type='text' onChange={handleChange} name="correo" value={input.correo || ""}/></label>
-                        <label><input placeholder="Dirección de envío" type='text' onChange={handleChange} name="direccion" value={input.direccion || ""}/></label>
-                        <label><input placeholder="Teléfono" type="text" onChange={handleChange} name="telefono" value={input.telefono || ""}/></label>
+                        <label><input placeholder="Nombre y apellido" type='text' onChange={handleChange} name="name" value={input.name || ""}/></label>
+                        <label><input placeholder="Email" type='text' onChange={handleChange} name="mail" value={input.mail || ""}/></label>
+                        <label><input placeholder="Email" type='text' onChange={handleChange} onBlur={onBlurHandler} name="mailConfirm" value={input.mailConfirm || ""}/></label>
+                        <label><input placeholder="Dirección de envío" type='text' onChange={handleChange} name="address" value={input.address || ""}/></label>
+                        <label><input placeholder="Teléfono" type="text" onChange={handleChange} name="phone" value={input.phone || ""}/></label>
                     </div>
                     <div>
-                        <button onClick={() => createOrder()} className="Finish">Finalizar compra</button>
+                        <button onClick={() => createOrder()} className="Finish" disabled={buttonDisabled}>Finalizar compra</button>
                     </div>
                 </div>
             </div>
