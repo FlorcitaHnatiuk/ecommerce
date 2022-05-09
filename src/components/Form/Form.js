@@ -1,5 +1,6 @@
 import './Form.css'
 import CartContext from "../../context/CartContext"
+import Swal from 'sweetalert2'
 import { useContext, useState } from "react"
 import { getDocs, writeBatch, query, where, collection, documentId, addDoc } from 'firebase/firestore'
 import { firestoreDb } from '../../services/firebase/index'
@@ -19,8 +20,14 @@ const Form = () => {
 
     const onBlurHandler = (event) =>  {
         if (input.mail === input.mailConfirm) {
-            console.log('hola')
             setButtonDisabled(false)
+        } else {
+            Swal.fire({
+                icon: 'error',
+                title: 'Oops...',
+                text: 'Mail incorrecto!',
+                footer: 'Chequea tus datos'
+            })
         }
     }
 
@@ -31,12 +38,11 @@ const Form = () => {
     }
 
     const createOrder = () => {
-        console.log('chau')
         setLoading(true)
     
         const objOrder = {
             prodOrder: cart.map(prod => { return ({ id: prod.id, name: prod.name, quantity: prod.quantity, priceUni: prod.price }) }),
-            buyer: input,
+            buyer: {...input},
             total: totalCost(),
             date: new Date
         }
