@@ -12,7 +12,6 @@ const Item = ({ name, price, img, id }) => {
         
         <ItemContainer onClick={handleClick}>
             <Card>
-
                 <div className="card">
                     <div className="img">
                         <img className="icon" src="../img/grapes.PNG" alt="grapes icon"/>      

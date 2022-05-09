@@ -11,8 +11,11 @@ const Cart = () => {
     if(cart.length === 0) {
         return (
             <>
-                <h2>Carrito vacío</h2>
-                <Link to={'/'}>Conocé nuestros productos</Link>
+                <h1 className="emptyCart">Carrito vacío</h1>
+                <div className="home">
+                    <Link to={'/'} className="prods">Inicio</Link>
+                </div>
+                
             </>
         )
     }

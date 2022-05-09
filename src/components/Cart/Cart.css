@@ -2,6 +2,22 @@
     margin: 0 35px;
 }
 
+.emptyCart{
+    font-family: 'BIZ UDPMincho', serif;
+    margin: 90px;
+}
+
+.home {
+    margin-bottom: 40px;
+}
+
+.prods {
+    font-family: 'BIZ UDPMincho', serif;
+    color: black;
+    background-color:#D22779;
+    padding: 10px;
+}
+
 .CartTitle {
     font-family: 'BIZ UDPMincho', serif;
     float: left;
