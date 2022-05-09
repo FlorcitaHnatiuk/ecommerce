@@ -1,13 +1,25 @@
+import React from 'react';
+import { useNavigate } from 'react-router-dom';
 import './NotFound.css'
 
 const NotFound = () => {
 
-    return (
+    const navigate = useNavigate();
+
+    const handleClick = () => {
+        navigate("/");
+    }
+
+    return ( 
         <>
-            <h1 className="notFound">Not Found</h1>
-            <h2>Error 404</h2>
+        <div className="container">
+            <img className="containerImg" width="400" src='../../img/oops.jpg' alt='404' />
+        </div>
+        <div className="containerBtn">
+            <button className="btn" onClick={handleClick}>Volver al inicio</button>
+        </div>
         </>
-    )
+    );
 }
 
-export default NotFound
+export default NotFound;

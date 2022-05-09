@@ -2,3 +2,29 @@
     font-weight: bold;
     font-size: 400%;
 }
+
+.containerImg {
+    align-items: center;
+}
+
+.containerBtn {
+    margin-top: 10px;
+    margin-bottom: 10px;
+}
+
+.btn {
+    font-size: 16px;
+    font-weight: 400;
+    font-family: 'BIZ UDPMincho', serif;
+    color: white;
+    text-align: center;
+    line-height: 48px;
+    width: 280px;
+    height: 48px;
+    padding: 0 24px;
+    background-color: #540E33;
+    border: none;
+    border-radius: 6px;
+    box-shadow: rgb(255, 255, 255) 0px 0px 0px 0px;
+    cursor: pointer;
+}
