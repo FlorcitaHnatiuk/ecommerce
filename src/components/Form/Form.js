@@ -28,12 +28,10 @@ const Form = () => {
         const name = event.target.name;
         const value = event.target.value;
         setInput(values => ({ ...values, [name]: value }))
-        
     }
 
     const createOrder = () => {
         console.log('chau')
-        
         setLoading(true)
     
         const objOrder = {
@@ -85,33 +83,32 @@ const Form = () => {
     if (orderId) {
         return (
             <>  
-                <h1 className="BuyTitle">Gracias por tu compra!</h1>
-                <h3 className="Code">Tu código es: {orderId}</h3>
-                <p className="Code">Pronto nos contactaremos para coordinar la entrega</p>
+                <h2 className="buyTitle">Gracias por tu compra {input.name}!</h2>
+                <h3 className="code">Tu código es: {orderId}</h3>
+                <p className="code">Pronto nos contactaremos para coordinar la entrega</p>
             </>
         )
     }
 
     if (loading) {
-        return <h1>Procesando compra</h1>
+        return <h1 className="processingBuy">Procesando compra</h1>
     }
-
 
     return (
         <form onSubmit={handleSubmit}>
-            <h1 className='Title'>Tus datos</h1>
-            <div className='Form'>
-                <div className='Field'>
-                    <div className='Inputs'>
+            <h2 className='title'>Tus datos</h2>
+            <div className='form'>
+                <div className='field'>
+                    <div className='inputs'>
                         <label><input placeholder="Nombre y apellido" type='text' onChange={handleChange} name="name" value={input.name || ""}/></label>
                         <label><input placeholder="Email" type='text' onChange={handleChange} name="mail" value={input.mail || ""}/></label>
                         <label><input placeholder="Email" type='text' onChange={handleChange} onBlur={onBlurHandler} name="mailConfirm" value={input.mailConfirm || ""}/></label>
                         <label><input placeholder="Dirección de envío" type='text' onChange={handleChange} name="address" value={input.address || ""}/></label>
                         <label><input placeholder="Teléfono" type="text" onChange={handleChange} name="phone" value={input.phone || ""}/></label>
-                    </div>
                     <div>
-                        <button onClick={() => createOrder()} className="Finish" disabled={buttonDisabled}>Finalizar compra</button>
+                        <button type="submit" onClick={() => createOrder()} className="finish" disabled={buttonDisabled}>Finalizar compra</button>
                     </div>
+                </div>
                 </div>
             </div>
         </form>
