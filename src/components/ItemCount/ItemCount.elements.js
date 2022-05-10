@@ -9,6 +9,9 @@ export const Counter = styled.div `
 
 export const Button = styled.button `
     text-align: center;
+    align-items: center;
+    justify-content: center;
+    display: flex;
     background-color: #540E33;
     color: #fff;
     padding: 0.5rem;

@@ -10,7 +10,12 @@ const CartWidget = () => {
     return (
         <>
             <div className={getQuantity() === 0 ? 'ocult' : 'hasProd'}>
-                <Link to='/cart'><FaShoppingCart /> { getQuantity() }</Link>
+                <Link to='/cart'>
+                    <div className="cartQuant">
+                        <img src="../img/Carrito.png" width="50px"/>  
+                        { getQuantity() }
+                    </div>
+                </Link>
             </div>
         </>
     )

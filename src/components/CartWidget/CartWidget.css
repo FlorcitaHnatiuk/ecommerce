@@ -6,6 +6,13 @@
     margin: 0 15px;
 }
 
+.cartQuant {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+}
+
 .hasProd a{
     text-decoration: none;
     color: #CCAFAF;

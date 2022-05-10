@@ -12,9 +12,9 @@ const ItemCart = ({ id, name, price, quantity }) => {
             <div className='prodCart'>
                 <p>{name}</p>
                 <p>{quantity}</p>
-                <p className='priceProd'>Precio unitario: ${price}</p>
-                <p className='subTotalProd'>Subtotal: <span>${quantity * price}</span></p>
-                <button className="removeButton" onClick={() => removeItem(id)}><FaCartArrowDown/></button> 
+                <p className='priceProd'>${price}</p>
+                <p className='subTotalProd'><span>${quantity * price}</span></p>
+                <button className="removeButton" onClick={() => removeItem(id)}><FaCartArrowDown/></button>      
             </div>
         </>
     )

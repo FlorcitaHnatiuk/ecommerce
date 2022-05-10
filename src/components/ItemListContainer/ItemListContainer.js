@@ -21,11 +21,15 @@ const ItemListContainer = (props) => {
     )
 
     if(loading) {
-        return <div className='spinnerContainer'><p className='spinner'></p></div>
+        return (
+                <div className='spinnerContainer'>
+                    <div class="lds-ring"><div></div><div></div><div></div><div></div></div>
+                </div>
+        )
     }
 
     if(products.length === 0) {
-        return <h2>No hay productos</h2>
+        return <h2 className="nothingToShow">No hay productos</h2>
     }
 
     return (

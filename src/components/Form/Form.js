@@ -1,9 +1,12 @@
 import './Form.css'
 import CartContext from "../../context/CartContext"
 import Swal from 'sweetalert2'
+import Cart from "../Cart/Cart"
+import ItemCart from "../ItemCart/ItemCart"
 import { useContext, useState } from "react"
 import { getDocs, writeBatch, query, where, collection, documentId, addDoc } from 'firebase/firestore'
 import { firestoreDb } from '../../services/firebase/index'
+import { NavLink } from "react-router-dom"
 
 const Form = () => {
 
@@ -26,7 +29,7 @@ const Form = () => {
                 icon: 'error',
                 title: 'Oops...',
                 text: 'Mail incorrecto!',
-                footer: 'Chequea tus datos'
+                footer: 'Chequea tus datos por favor'
             })
         }
     }
@@ -89,9 +92,12 @@ const Form = () => {
     if (orderId) {
         return (
             <>  
+                <h1>CONFIRMACION DE COMPRA</h1>
                 <h2 className="buyTitle">Gracias por tu compra {input.name}!</h2>
-                <h3 className="code">Tu código es: {orderId}</h3>
-                <p className="code">Pronto nos contactaremos para coordinar la entrega</p>
+                <h3 className="code">Tu código de seguimiento es {orderId}</h3>
+                <div className="processingBuy">
+                    <NavLink to="/" className="finish">Volver al inicio</NavLink>
+                </div>
             </>
         )
     }
@@ -100,24 +106,36 @@ const Form = () => {
         return <h1 className="processingBuy">Procesando compra</h1>
     }
 
+    if (cart.length === 0) {
+        return < Cart />
+    }
+
     return (
-        <form onSubmit={handleSubmit}>
-            <h2 className='title'>Tus datos</h2>
-            <div className='form'>
-                <div className='field'>
-                    <div className='inputs'>
-                        <label><input placeholder="Nombre y apellido" type='text' onChange={handleChange} name="name" value={input.name || ""}/></label>
-                        <label><input placeholder="Email" type='text' onChange={handleChange} name="mail" value={input.mail || ""}/></label>
-                        <label><input placeholder="Email" type='text' onChange={handleChange} onBlur={onBlurHandler} name="mailConfirm" value={input.mailConfirm || ""}/></label>
-                        <label><input placeholder="Dirección de envío" type='text' onChange={handleChange} name="address" value={input.address || ""}/></label>
-                        <label><input placeholder="Teléfono" type="text" onChange={handleChange} name="phone" value={input.phone || ""}/></label>
-                    <div>
-                        <button type="submit" onClick={() => createOrder()} className="finish" disabled={buttonDisabled}>Finalizar compra</button>
+        <>
+        <div className="containerForm">
+            <div className="neonContainer">
+                <form onSubmit={handleSubmit}>
+                    <h2 className='title'>Completa tus datos</h2>
+                    <div className='form'>
+                        <div className='field'>
+                            <div className='inputs'>
+                                <label><input placeholder="Nombre y apellido" type='text' onChange={handleChange} name="name" value={input.name || ""} /></label>
+                                <label><input className={(input.mailConfirm === input.mail) ? 'greenOk' : 'redWrong'} placeholder="Email" type='text' onChange={handleChange} name="mail" value={input.mail || ""} /></label>
+                                <label><input className={(input.mailConfirm === input.mail) ? 'greenOk' : 'redWrong'} placeholder="Nuevamente tu Email" type='text' onChange={handleChange} onBlur={onBlurHandler} name="mailConfirm" value={input.mailConfirm || ""} /></label>
+                                <label><input placeholder="Dirección de envío" type='text' onChange={handleChange} name="address" value={input.address || ""} /></label>
+                                <label><input placeholder="Teléfono" type="text" onChange={handleChange} name="phone" value={input.phone || ""} /></label>
+                                <div>
+                                    <button type="submit" onClick={() => createOrder()} className="finish" disabled={buttonDisabled}>Finalizar compra</button>
+                                </div>
+                            </div>
+                        </div>
                     </div>
-                </div>
-                </div>
+                </form>
             </div>
-        </form>
+        </div>
+            
+        </>
+
     )
 }
 
