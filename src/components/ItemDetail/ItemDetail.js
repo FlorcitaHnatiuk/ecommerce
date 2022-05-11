@@ -44,6 +44,7 @@ const ItemDetail = ({ id, name, price, img, variety, productor, corte, enologist
                         <p>Enólogo: {enologist}</p>
                         <p>{place}</p>
                         <p>Barricado: {barricado}</p>
+                        <p>Stock: {stock}</p>
                     </Detail>
                 </div>
                 <div>

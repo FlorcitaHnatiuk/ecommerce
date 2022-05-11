@@ -2,7 +2,6 @@ import './Form.css'
 import CartContext from "../../context/CartContext"
 import Swal from 'sweetalert2'
 import Cart from "../Cart/Cart"
-import ItemCart from "../ItemCart/ItemCart"
 import { useContext, useState } from "react"
 import { getDocs, writeBatch, query, where, collection, documentId, addDoc } from 'firebase/firestore'
 import { firestoreDb } from '../../services/firebase/index'
@@ -119,11 +118,11 @@ const Form = () => {
                     <div className='form'>
                         <div className='field'>
                             <div className='inputs'>
-                                <label><input placeholder="Nombre y apellido" type='text' onChange={handleChange} name="name" value={input.name || ""} /></label>
+                                <label><input className='greenOk' placeholder="Nombre y apellido" type='text' onChange={handleChange} name="name" value={input.name || ""} /></label>
                                 <label><input className={(input.mailConfirm === input.mail) ? 'greenOk' : 'redWrong'} placeholder="Email" type='text' onChange={handleChange} name="mail" value={input.mail || ""} /></label>
                                 <label><input className={(input.mailConfirm === input.mail) ? 'greenOk' : 'redWrong'} placeholder="Nuevamente tu Email" type='text' onChange={handleChange} onBlur={onBlurHandler} name="mailConfirm" value={input.mailConfirm || ""} /></label>
-                                <label><input placeholder="Dirección de envío" type='text' onChange={handleChange} name="address" value={input.address || ""} /></label>
-                                <label><input placeholder="Teléfono" type="text" onChange={handleChange} name="phone" value={input.phone || ""} /></label>
+                                <label><input className='greenOk' placeholder="Dirección de envío" type='text' onChange={handleChange} name="address" value={input.address || ""} /></label>
+                                <label><input className='greenOk' placeholder="Teléfono" type="text" onChange={handleChange} name="phone" value={input.phone || ""} /></label>
                                 <div>
                                     <button type="submit" onClick={() => createOrder()} className="finish" disabled={buttonDisabled}>Finalizar compra</button>
                                 </div>
