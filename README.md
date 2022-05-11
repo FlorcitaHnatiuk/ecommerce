@@ -24,7 +24,7 @@ npm start
 ```
 
 
-## Dependecies
+## Dependencies
 
 Para que el proyecto se logre realizar de una manera esperada utilicé las siguientes herramientas:
 
@@ -45,7 +45,8 @@ Para que el proyecto se logre realizar de una manera esperada utilicé las sigui
 
 - Colección: categories. Cada categoría será según lo siguiente:
 
-| Campo | Tipo | Valor |
+|   Campo      | Tipo |            Valor          |
+| -------------| ------------- | ------------- |
 | Descripcion | String | Categoría del producto |
 
 - Colección: Products. Cada product tiene las siguientes características:
