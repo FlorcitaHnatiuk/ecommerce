@@ -27,12 +27,12 @@ npm start
 ## Dependecies
 
 Para que el proyecto se logre realizar de una manera esperada utilicé las siguientes herramientas:
-⚡ React-icons
-⚡ React-social-icons
-⚡ React-router-dom: routing de la web
-⚡ Styled-component: estilos generales
-⚡ Sweetalert2: aviso email ingresado incorrecto
-⚡ React-Firebase: base de datos
+-⚡ React-icons
+-⚡ React-social-icons
+-⚡ React-router-dom: routing de la web
+-⚡ Styled-component: estilos generales
+-⚡ Sweetalert2: aviso email ingresado incorrecto
+-⚡ React-Firebase: base de datos
 
 
 ## Firebase / Firestore
