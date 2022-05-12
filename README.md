@@ -84,7 +84,11 @@ Desde Navbar podrás acceder entonces a las categorías con las que contamos. Al
 
 Para acceder a tu carrito solo debés darle click al carrito *CartWidget* que aparecerá cuando hayas agregado algún producto a tu cesta. Haciendo click sobre él podrás ir a la vista que resume tu compra. Aquí cada producto será traído gracias al componente *ItemCart*. Si querés eliminar productos, podés hacerlo desde el botón a la derecha. También podrás vaciar el carrito, lo cual te redireccionará directamente a la Home.
 
-En el caso de querer continuar con la compra, dándole click a finalizar compra, la web te redireccionará a *Form* donde deberás completar tus datos, y en el caso de que los mails estén iguales el botón será habilitado para generar la orden y automáticamente se cargará tu id de compra. 
+En el caso de querer continuar con la compra, dándole click a finalizar compra, la web te redireccionará a *Form* donde deberás completar tus datos, y en el caso de que los mails estén iguales el botón será habilitado para generar la orden y automáticamente se cargará tu id de compra.
+
+# Así lo vas a ver! 
+
+![Alt text](React-App.gif)
 
 # Funciones *CartContext*
 
