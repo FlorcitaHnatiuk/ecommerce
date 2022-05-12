@@ -1,4 +1,4 @@
-.Title {
+.itemTitle {
     font-family: 'BIZ UDPMincho', serif;
     font-size: 40px;
     margin-top: 3rem;
@@ -6,10 +6,10 @@
     text-align: left;
 }
 
-.Price {
+.itemPrice {
     font-weight: bold;
 }
 
-.DetailImg {
+.detailImg {
     width: 80%;
 }

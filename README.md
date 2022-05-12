@@ -48,14 +48,16 @@ Para que el proyecto se logre realizar de una manera esperada utilicé las sigui
 
 ⚡ React-Firebase: base de datos
 
+⚡ React-toastify: notificación de producto
+
 
 ## Firebase / Firestore
 
 - Colección: categories. Cada categoría será según lo siguiente:
 
-|   Campo      | Tipo |            Valor          |
+|   Campo      | Tipo |            Valor       |
 | -------------| ------------- | ------------- |
-| Descripcion | String | Categoría del producto |
+| Descripcion | String | Categoría del producto|
 
 - Colección: Products. Cada product tiene las siguientes características:
 
@@ -84,4 +86,8 @@ Para acceder a tu carrito solo debés darle click al carrito *CartWidget* que ap
 
 En el caso de querer continuar con la compra, dándole click a finalizar compra, la web te redireccionará a *Form* donde deberás completar tus datos, y en el caso de que los mails estén iguales el botón será habilitado para generar la orden y automáticamente se cargará tu id de compra. 
 
-Que disfrutes un vinito!
+# Funciones *CartContext*
+
+
+
+# Que disfrutes tu vinito!

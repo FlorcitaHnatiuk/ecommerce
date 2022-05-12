@@ -46,7 +46,7 @@ const Form = () => {
             prodOrder: cart.map(prod => { return ({ id: prod.id, name: prod.name, quantity: prod.quantity, priceUni: prod.price }) }),
             buyer: {...input},
             total: totalCost(),
-            date: new Date
+            date: new Date()
         }
 
         const ids = cart.map(prod => prod.id)
@@ -91,7 +91,6 @@ const Form = () => {
     if (orderId) {
         return (
             <>  
-                <h1>CONFIRMACION DE COMPRA</h1>
                 <h2 className="buyTitle">Gracias por tu compra {input.name}!</h2>
                 <h3 className="code">Tu código de seguimiento es {orderId}</h3>
                 <div className="processingBuy">
@@ -118,11 +117,11 @@ const Form = () => {
                     <div className='form'>
                         <div className='field'>
                             <div className='inputs'>
-                                <label><input className='greenOk' placeholder="Nombre y apellido" type='text' onChange={handleChange} name="name" value={input.name || ""} /></label>
-                                <label><input className={(input.mailConfirm === input.mail) ? 'greenOk' : 'redWrong'} placeholder="Email" type='text' onChange={handleChange} name="mail" value={input.mail || ""} /></label>
-                                <label><input className={(input.mailConfirm === input.mail) ? 'greenOk' : 'redWrong'} placeholder="Nuevamente tu Email" type='text' onChange={handleChange} onBlur={onBlurHandler} name="mailConfirm" value={input.mailConfirm || ""} /></label>
-                                <label><input className='greenOk' placeholder="Dirección de envío" type='text' onChange={handleChange} name="address" value={input.address || ""} /></label>
-                                <label><input className='greenOk' placeholder="Teléfono" type="text" onChange={handleChange} name="phone" value={input.phone || ""} /></label>
+                                <label><input required className='greenOk' placeholder="Nombre y apellido" type='text' onChange={handleChange} name="name" value={input.name || ""} /></label>
+                                <label><input required className={(input.mailConfirm === input.mail) ? 'greenOk' : 'redWrong'} placeholder="Email" type='text' onChange={handleChange} name="mail" value={input.mail || ""} /></label>
+                                <label><input required className={(input.mailConfirm === input.mail) ? 'greenOk' : 'redWrong'} placeholder="Nuevamente tu Email" type='text' onChange={handleChange} onBlur={onBlurHandler} name="mailConfirm" value={input.mailConfirm || ""} /></label>
+                                <label><input required className='greenOk' placeholder="Dirección de envío" type='text' onChange={handleChange} name="address" value={input.address || ""} /></label>
+                                <label><input required className='greenOk' placeholder="Teléfono" type="text" onChange={handleChange} name="phone" value={input.phone || ""} /></label>
                                 <div>
                                     <button type="submit" onClick={() => createOrder()} className="finish" disabled={buttonDisabled}>Finalizar compra</button>
                                 </div>
