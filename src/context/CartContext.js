@@ -25,7 +25,6 @@ export const CartContextProvider = ({ children }) => {
         }
     }
 
-
     const getQuantity = () => {
         let count = 0
         cart.forEach(prod => {
@@ -36,7 +35,7 @@ export const CartContextProvider = ({ children }) => {
 
     const isInCart = (id) => {
         return cart.some(prod => prod.id === id )
-    }
+    } 
 
     const clearCart = () => {
         setCart([])

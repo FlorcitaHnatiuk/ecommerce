@@ -55,9 +55,9 @@ Para que el proyecto se logre realizar de una manera esperada utilicé las sigui
 
 - Colección: categories. Cada categoría será según lo siguiente:
 
-|   Campo      | Tipo |            Valor       |
+|   Campo      | Tipo   |            Valor       |
 | -------------| ------------- | ------------- |
-| Descripcion | String | Categoría del producto|
+| Descripcion  | String | Categoría del producto|
 
 - Colección: Products. Cada product tiene las siguientes características:
 
@@ -88,17 +88,17 @@ En el caso de querer continuar con la compra, dándole click a finalizar compra,
 
 # Funciones *CartContext*
 
-*addItem* =>
+*addItem* => añade el producto al carrito. En el caso de que el producto ya esté en el carrito, esta función va a evitar que se genere otra línea de ItemCart, solo modificará la cantidad de dicho producto.
 
-*getQuantity* => esta función permite que cuando agregas productos al carrito se muestre la cantidad en el CartWidget
+*getQuantity* => esta función permite que cuando agregas productos al carrito se muestre la cantidad en el CartWidget.
 
-*isInCart* => 
+*isInCart* => reconoce si el producto está o no en el carrito.
 
 *clearCart* => esta función está asociada al botón de vaciar carrito y limpiará todo lo que se encuentre en el.
 
 *removeItem* => esta función removerá el producto con ese id y seteará el nuevo valor del CartWidget.
 
-*getQuantityProd* =>
+*getQuantityProd* => esta función se utiliza en ItemDetail para guardar la cantidad que seleccionás de ese producto en el contador. 
 
 *totalCost* => esta función calcula el valor total de la compra.
 
