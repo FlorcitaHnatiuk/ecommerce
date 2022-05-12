@@ -88,6 +88,18 @@ En el caso de querer continuar con la compra, dándole click a finalizar compra,
 
 # Funciones *CartContext*
 
+*addItem* =>
 
+*getQuantity* => esta función permite que cuando agregas productos al carrito se muestre la cantidad en el CartWidget
+
+*isInCart* => 
+
+*clearCart* => esta función está asociada al botón de vaciar carrito y limpiará todo lo que se encuentre en el.
+
+*removeItem* => esta función removerá el producto con ese id y seteará el nuevo valor del CartWidget.
+
+*getQuantityProd* =>
+
+*totalCost* => esta función calcula el valor total de la compra.
 
 # Que disfrutes tu vinito!
