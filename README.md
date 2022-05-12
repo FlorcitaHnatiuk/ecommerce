@@ -88,7 +88,7 @@ En el caso de querer continuar con la compra, dándole click a finalizar compra,
 
 # Así lo vas a ver! 
 
-![Alt text](React-App.gif)
+![Alt text](/ecommerce/Docs/React-App.gif)
 
 # Funciones *CartContext*
 
