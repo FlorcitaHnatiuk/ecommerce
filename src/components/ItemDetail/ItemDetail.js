@@ -1,3 +1,4 @@
+
 import ItemCount from '../ItemCount/ItemCount'
 import { ItemDetailContainer, Detail } from './ItemDetail.elements'
 import { useState, useContext } from 'react'
@@ -29,7 +30,7 @@ const ItemDetail = ({ id, name, price, img, variety, productor, corte, enologist
     return (
         <>
             <div>
-                <h2 className="Title">{name}</h2>
+                <h2 className="itemTitle">{name}</h2>
             </div>
             <ItemDetailContainer>
                 <div>
@@ -37,7 +38,7 @@ const ItemDetail = ({ id, name, price, img, variety, productor, corte, enologist
                 </div>
                 <div>
                     <Detail>
-                        <p className="Price">Precio unitario: ${price}</p>
+                        <p className="itemPrice">Precio unitario: ${price}</p>
                         <p>Varietal: {variety}</p>
                         <p>Productor: {productor}</p>
                         <p>Corte: {corte}</p>
@@ -48,7 +49,9 @@ const ItemDetail = ({ id, name, price, img, variety, productor, corte, enologist
                     </Detail>
                 </div>
                 <div>
-                    {false ? <Link to='/cart' className='goCart'><span>Ir al carrito</span></Link> : <ItemCount initial={getQuantityProd(id)} stock={stock} onAdd={handleOnAdd} />}
+                    {
+                        stock > 0 ? <ItemCount initial={getQuantityProd(id)} stock={stock} onAdd={handleOnAdd} /> : <span>Sin stock</span>
+                    }
                 </div>
             </ItemDetailContainer>
         </>

@@ -8,6 +8,11 @@
     margin-right: -3rem;
 }
 
+.title {
+    font-family: 'BIZ UDPMincho', serif;
+    color: #540E33;
+}
+
 .wine {
     align-items: center;
     text-align: center;

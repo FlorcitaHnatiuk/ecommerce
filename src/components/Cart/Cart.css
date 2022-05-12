@@ -1,4 +1,4 @@
-.PageHeader {
+.pageHeader {
     margin: 0 35px;
 }
 
@@ -18,7 +18,7 @@
     padding: 10px;
 }
 
-.CartTitle {
+.cartTitle {
     font-family: 'BIZ UDPMincho', serif;
     float: left;
     font-size: 27px;
@@ -27,14 +27,14 @@
     margin: 40px;
 }
 
-.Total {
+.total {
     font-weight: bold;
     font-size: 20px;
     margin-top: 50px;
     margin-bottom: 50px;
 }
 
-.Btns {
+.btns {
     margin-top: 50px;
     margin-bottom: 50px;
 }

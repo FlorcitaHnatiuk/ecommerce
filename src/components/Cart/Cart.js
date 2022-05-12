@@ -22,12 +22,12 @@ const Cart = () => {
     return (
         <>
             <div>
-                <div className="PageHeader">
-                    <h2 className="CartTitle">Mi carrito</h2>
+                <div className="pageHeader">
+                    <h2 className="cartTitle">Mi carrito</h2>
                 </div>
                 {cart.map(prod => <ItemCart key={prod.id}{...prod}/>)}
-                <p className="Total">Total: ${totalCost()}</p>
-                <div className="Btns">
+                <p className="total">Total: ${totalCost()}</p>
+                <div className="btns">
                     <Link className="empty" to={'/'} onClick={() => clearCart()}>Vaciar carrito</Link>
                     <Link className="continue" to={'/form'}>Continuar compra</Link>
                 </div>
