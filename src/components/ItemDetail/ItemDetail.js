@@ -3,7 +3,6 @@ import ItemCount from '../ItemCount/ItemCount'
 import { ItemDetailContainer, Detail } from './ItemDetail.elements'
 import { useState, useContext } from 'react'
 import CartContext from '../../context/CartContext'
-import { Link } from 'react-router-dom'
 import './ItemDetail.css'
 import { useNotification } from '../../notification/Notification'
 
