@@ -1,6 +1,7 @@
 import CartContext from '../../context/CartContext'
 import { useContext } from 'react'
 import { Link } from 'react-router-dom'
+import { FaOpencart } from "react-icons/fa";
 import './CartWidget.css'
 
 const CartWidget = () => {
@@ -11,7 +12,7 @@ const CartWidget = () => {
             <div className={getQuantity() === 0 ? 'ocult' : 'hasProd'}>
                 <Link to='/cart'>
                     <div className="cartQuant">
-                        <img src="../img/Carrito.png" width="50px" alt="Carrito"/>  
+                        <FaOpencart/>
                         { getQuantity() }
                     </div>
                 </Link>
