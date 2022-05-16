@@ -5,10 +5,6 @@ const Index = () => {
 
     return (
         <div>
-            <div className="presentation">
-                <img className="winestate" src="../img/wineglass.webp" alt="wineglasses"/>
-                <img className="winestate" src="../img/wineglass.webp" alt="wineglasses"/>
-            </div>
             <div>
                 <ItemListContainer/> 
             </div>

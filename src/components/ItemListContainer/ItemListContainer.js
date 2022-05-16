@@ -36,7 +36,7 @@ const ItemListContainer = (props) => {
         
         <div>
             <div className="titleCatContainer">
-                <h1 className="titleCategory">Nuestros {categoryId}</h1>  
+                <h1 className="titleCategory">{categoryId}</h1>  
             </div>
             <ItemList products={products} />
         </div>

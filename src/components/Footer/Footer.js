@@ -24,9 +24,9 @@ const Footer = () =>{
             </div>
             <div className="container">
                 <ul>
-                    <li className="social"><SocialIcon url="https://www.linkedin.com/in/florenciahnatiuk/" bgColor="#FFC900" /></li>
-                    <li className="social"><SocialIcon url="https://github.com/FlorcitaHnatiuk" network="github" bgColor="#ff5a01"/></li>
-                    <li className="social"><SocialIcon url="https://twitter.com/popichulet" network="twitter" bgColor="#EF2F88"/></li>
+                    <li className="social"><SocialIcon url="https://www.linkedin.com/in/florenciahnatiuk/" bgColor="#5F7464" /></li>
+                    <li className="social"><SocialIcon url="https://github.com/FlorcitaHnatiuk" network="github" bgColor="#5F7464"/></li>
+                    <li className="social"><SocialIcon url="https://twitter.com/popichulet" network="twitter" bgColor="#5F7464"/></li>
                 </ul>
             </div>
             <div className="container">
