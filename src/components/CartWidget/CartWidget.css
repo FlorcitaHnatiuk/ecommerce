@@ -15,13 +15,9 @@
 
 .hasProd a{
     text-decoration: none;
-    color: #CCAFAF;
+    color: #DE356A;
     font-family: 'BIZ UDPMincho', serif;
     font-size: larger;
-}
-
-.hasProd a:hover {
-    color: #900C3F;
     font-weight: bold;
 }
 

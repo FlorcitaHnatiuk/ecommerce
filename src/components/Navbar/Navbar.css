@@ -1,3 +1,15 @@
+.container-fluid {
+    padding: 1rem 3rem;
+}
+
+.navbar .navbar-brand {
+    color: rgb(2, 2, 2);
+    text-decoration: none;
+    font-style: none;
+    padding-right: 30px;
+    padding-left: 30px;
+}
+
 .NavBar {
     width: 100%;
     background-color: #540E33;
@@ -9,7 +21,6 @@
     justify-content: space-around;
     align-items: center;
     height: 100%;
-    padding: 0.5rem 2.5rem;
     color: #FDC8B7;
     font-family: sans-serif;
     font-size:14px;
@@ -22,11 +33,13 @@
 .navItem {
     color: #CCAFAF;
     font-family: 'BIZ UDPMincho', serif;
-    padding-top: 0.5rem;
+    font-size: 14px;
+    padding-left: 1.5rem;
+    text-decoration: none;
 }
 
 .navItem:hover {
-    color: #900C3F;
+    color: #DE356A;
     font-weight: bold;
 }
 
@@ -34,7 +47,8 @@
     font-weight: bold;
     color: #DE356A;
     font-family: 'BIZ UDPMincho', serif;
-    padding-top: 0.5rem;
+    padding-left: 1.5rem;
+    font-size: 14px;
 }
 
 .neon {
@@ -50,3 +64,12 @@
 		0 0 140px rgba(127,50,90),
 		0 0 180px rgba(127,50,90);   
     }
+
+a {
+    text-decoration: none;
+    font-family: 'Satisfy', cursive;
+}
+
+.navbar .navbar-brand a:hover {
+    color: #DE356A;
+}

@@ -21,22 +21,29 @@
 .cartTitle {
     font-family: 'BIZ UDPMincho', serif;
     float: left;
-    font-size: 27px;
+    font-size: 30px;
     text-align: start;
     line-height: 26.18px;
     margin: 40px;
+    color: #540E33;
 }
 
 .total {
     font-weight: bold;
-    font-size: 20px;
+    font-size: 26px;
     margin-top: 50px;
     margin-bottom: 50px;
+    align-items: center;
+    justify-content: center;
+    display: flex;
 }
 
 .btns {
     margin-top: 50px;
     margin-bottom: 50px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
 }
 
 .empty {
@@ -49,6 +56,9 @@
     margin: 25px;
     background-color: #D22779;
     color: white;
+    align-items: center;
+    justify-content: center;
+    display: flex;
 }
 
 .continue {
@@ -61,5 +71,9 @@
     margin: 25px;
     background-color: #D22779;
     color: white;
+    align-items: center;
+    justify-content: center;
+    align-items: center;
+    display: flex;
 }
 
