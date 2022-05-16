@@ -1,3 +1,19 @@
+.titleCategory {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: #540E33;
+    font-family: 'BIZ UDPMincho', serif;
+}
+
+.titleCatContainer {
+    background-image: url(/public/img/wine.jpg);
+    background-size: cover;
+    background-position: center;
+    padding:135px;
+    width: 100%;
+}
+
 .spinContainer {
     position: fixed;
     top: calc(50% - 40px);

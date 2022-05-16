@@ -42,6 +42,8 @@ Para que el proyecto se logre realizar de una manera esperada utilicé las sigui
 
 ⚡ React-router-dom: routing de la web
 
+⚡ React-bootstrap: navbar 
+
 ⚡ Styled-component: estilos generales
 
 ⚡ Sweetalert2: aviso email ingresado incorrecto
