@@ -90,11 +90,13 @@ const Form = () => {
 
     if (orderId) {
         return (
-            <>  
-                <h2 className="buyTitle">Gracias por tu compra {input.name}!</h2>
-                <h3 className="code">Tu código de seguimiento es {orderId}</h3>
-                <div className="processingBuy">
-                    <NavLink to="/" className="finish">Volver al inicio</NavLink>
+            <>
+                <div className="finishContainer">
+                    <h2 className="buyTitle">Gracias por tu compra {input.name}!</h2>
+                    <p className="code">Tu código de seguimiento es {orderId}</p>
+                    <div className="processingBuy">
+                        <NavLink to="/" className="finish">Volver al inicio</NavLink>
+                    </div>
                 </div>
             </>
         )
